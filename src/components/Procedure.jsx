@@ -18,8 +18,8 @@ const Procedure = ({ procedureNumber }) => {
   }, [procedureNumber]);
 
   if (!procedure) return <div>Loading...</div>;
-  console.log('Procedure object:', procedure); // Log the procedure object
-  console.log('Procedure title:', procedure.title); // Log the procedure title
+  // console.log('Procedure object:', procedure); // Log the procedure object
+  // console.log('Procedure title:', procedure.title); // Log the procedure title
 
   return (
     <div>

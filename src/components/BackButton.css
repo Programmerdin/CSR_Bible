@@ -1,0 +1,23 @@
+.back-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.back-button svg {
+  stroke: #000;
+  transition: stroke 0.3s;
+}
+
+.back-button:hover svg {
+  stroke: #007BFF;
+}

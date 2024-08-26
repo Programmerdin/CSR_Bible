@@ -1,27 +1,60 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home/home';
-import Bank_draft_canadian from './pages/bank_draft_canadian/bank_draft_canadian';
-import Bank_draft_foreign_currency from './pages/bank_draft_foreign_currency/bank_draft_foreign_currency';
-import NavigateToPageButton from './components/NavigateToPageButton';
+import React, { useState, useEffect } from 'react';
 import Procedure from './components/Procedure';
+import ProcedureView from './views/ProcedureView';
+import SearchView from './views/SearchView';
+import HomeView from './views/HomeView';
+import BottomNavigationBar from './components/BottomNavigationBar';
+import './App.css';
 
 function App() {
-    return (
-        <Router>
-            <div>
-                <NavigateToPageButton targetPath="/" buttonText="Home" />
-                <NavigateToPageButton targetPath="/bank_draft_canadian" buttonText={"Bank Draft Canadian"} />
-                <NavigateToPageButton targetPath="/bank_draft_foreign_currency" buttonText={"Bank Draft Foreign Currency"} />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/bank_draft_canadian" element={<Bank_draft_canadian />} />
-                    <Route path="/bank_draft_foreign_currency" element={<Bank_draft_foreign_currency />} />
-                </Routes>
-                <Procedure procedureNumber={"0001"}/>
-            </div>
-        </Router>
-    );
+  const [currentView, setcurrentView] = useState('home');
+  const [lastView, setLastView] = useState('home');
+
+  const handleHomeClick = () => {
+    console.log('Home icon clicked');
+    setLastView(currentView);
+    setcurrentView('home');
+  };
+
+  const handleSearchClick = () => {
+    console.log('Search icon clicked');
+    setLastView(currentView);
+    setcurrentView('search');
+  };
+
+  const handleBankDraftButtonClick = () => {
+    console.log('Bank Draft button clicked');
+    setLastView(currentView);
+    setcurrentView('procedure');
+  };
+
+  const handleBackButtonClick = () => {
+    console.log('Back button clicked');
+    if (currentView === 'search') {
+      setLastView(currentView);
+      setcurrentView(lastView);
+    }
+    if (currentView === 'procedure') {
+      setLastView(currentView);
+      setcurrentView(lastView);
+    }
+
+  };
+
+  return (
+    <div>
+      <div className='Main-View'>
+        {/* <Procedure procedureNumber={"0002"}/> */}
+        {currentView === 'home' ? <HomeView onBankDraftButtonClick={handleBankDraftButtonClick}/> : 
+        currentView === 'procedure' ? <ProcedureView onBackButtonClick={handleBackButtonClick}/> : 
+        currentView === 'search' ? <SearchView onBackButtonClick={handleBackButtonClick}/> : null}
+      </div>
+      <BottomNavigationBar
+        onHomeClick={handleHomeClick} 
+        onSearchClick={handleSearchClick}
+      />
+    </div>
+  );
 }
 
 export default App;
