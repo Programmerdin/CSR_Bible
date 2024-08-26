@@ -3,10 +3,18 @@ import './SearchBar.css';
 import Fuse from 'fuse.js';
 import procedureList from '../transaction_procedures/procedureList.json';
 
+import { useAtom } from 'jotai';
+import { currentViewAtom, lastViewAtom } from '../atoms/viewAtom';
+import { currentProcedureAtom } from '../atoms/procedureAtom';
+
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+
+  const [currentView, setCurrentView] = useAtom(currentViewAtom);
+  const [lastView, setLastView] = useAtom(lastViewAtom);
+  const [currentProcedure, setCurrentProcedure] = useAtom(currentProcedureAtom);
 
   const fuse = new Fuse(procedureList,{
     keys: [ 
@@ -23,7 +31,9 @@ const SearchBar = () => {
   };
 
   const handleSearchResultsClick = (searchResults) => {
-    console.log(searchResults);
+    setLastView(currentView);
+    setCurrentProcedure(searchResults.procedureNumber);
+    setCurrentView('procedure');
   };
 
 

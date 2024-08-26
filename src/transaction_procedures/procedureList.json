@@ -2,7 +2,7 @@
   {
     "procedureNumber": "0001",
     "procedureName": "Bank Draft Canadian",
-    "tags"  : ["bank Draft", "canadian"]
+    "tags"  : ["bank Draft", "canadian", "test"]
   },
   {
     "procedureNumber": "0002",
@@ -11,7 +11,7 @@
   },
   {
     "procedureNumber": "0003",
-    "procedureName": "Bank Draft Foreign",
-    "tags"  : ["bank Draft", "UK"]
+    "procedureName": "credit card",
+    "tags"  : ["credit card", "USD"]
   }
 ]
