@@ -1,0 +1,17 @@
+[
+  {
+    "procedureNumber": "0001",
+    "procedureName": "Bank Draft Canadian",
+    "tags"  : ["bank Draft", "canadian"]
+  },
+  {
+    "procedureNumber": "0002",
+    "procedureName": "Bank Draft Foreign",
+    "tags"  : ["bank Draft", "Foreign"]
+  },
+  {
+    "procedureNumber": "0003",
+    "procedureName": "Bank Draft Foreign",
+    "tags"  : ["bank Draft", "UK"]
+  }
+]

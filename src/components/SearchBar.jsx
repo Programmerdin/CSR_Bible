@@ -1,28 +1,31 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
+import Fuse from 'fuse.js';
+import procedureList from '../transaction_procedures/procedureList.json';
 
 
-const SearchBar = ({ suggestions }) => {
+const SearchBar = () => {
   const [query, setQuery] = useState('');
-  const [filteredSuggestions, setFilteredSuggestions] = useState([]);
+  const [searchResults, setSearchResults] = useState([]);
+
+  const fuse = new Fuse(procedureList,{
+    keys: [ 
+      'procedureNumber',
+      'procedureName',
+      'tags'
+    ],
+  });
 
   const handleInputChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
-    if (value.length > 0) {
-      const filtered = suggestions.filter((suggestion) =>
-        suggestion.toLowerCase().includes(value.toLowerCase())
-      );
-      setFilteredSuggestions(filtered);
-    } else {
-      setFilteredSuggestions([]);
-    }
+    setQuery(e.target.value);
+    const results = fuse.search(e.target.value);
+    setSearchResults(results.map(result => result.item));
   };
 
-  const handleSuggestionClick = (suggestion) => {
-    setQuery(suggestion);
-    setFilteredSuggestions([]);
+  const handleSearchResultsClick = (searchResults) => {
+    console.log(searchResults);
   };
+
 
   return (
     <div>
@@ -33,15 +36,17 @@ const SearchBar = ({ suggestions }) => {
         className='search-bar-input'
         placeholder="Search..."
       />
-      {filteredSuggestions.length > 0 && (
+      {searchResults.length > 0 && (
         <ul>
-          {filteredSuggestions.map((suggestion, index) => (
-            <li key={index} onClick={() => handleSuggestionClick(suggestion)}>
-              {suggestion}
+          {searchResults.map((searchResults, index) => (
+            <li key={index} onClick={() => handleSearchResultsClick(searchResults)}>
+              {searchResults.procedureName}
             </li>
           ))}
         </ul>
       )}
+
+
     </div>
   );
 };

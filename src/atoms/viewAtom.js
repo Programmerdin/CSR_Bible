@@ -1,6 +1,6 @@
 import { atom } from 'jotai'
 
-const currentView = atom('home')
-const lastView = atom('home')
+const currentViewAtom = atom('home')
+const lastViewAtom = atom('home')
 
-export { currentView, lastView }
+export { currentViewAtom, lastViewAtom }

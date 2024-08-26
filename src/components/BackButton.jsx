@@ -1,6 +1,16 @@
 import React from 'react';
+import { useAtom } from 'jotai';
+import { currentViewAtom, lastViewAtom } from '../atoms/viewAtom';
 
-const BackButton = ({ onClick }) => {
+const BackButton = () => {
+  const [currentView, setCurrentView] = useAtom(currentViewAtom);
+  const [lastView, setLastView] = useAtom(lastViewAtom);
+
+  const onClick = () => {
+    setLastView(currentView);
+    setCurrentView(lastView)
+  };
+
   return (
     <button onClick={onClick} className="back-button">
       <svg
