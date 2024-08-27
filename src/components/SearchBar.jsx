@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SearchBar.css';
+import searchIcon from '../assets/icons/searchGray.png';
 import Fuse from 'fuse.js';
 import procedureList from '../transaction_procedures/procedureList.json';
 
@@ -38,18 +39,25 @@ const SearchBar = () => {
 
 
   return (
-    <div>
+    <div className='SearchBarDiv'>
+      <img src={searchIcon} alt="Search Icon" className="search-icon" />
       <input
         type="text"
         value={query}
         onChange={handleInputChange}
         className='search-bar-input'
         placeholder="Search..."
-      />
+      >
+        
+      </input>
       {searchResults.length > 0 && (
         <ul>
           {searchResults.map((searchResults, index) => (
-            <li key={index} onClick={() => handleSearchResultsClick(searchResults)}>
+            <li 
+              key={index} 
+              onClick={() => handleSearchResultsClick(searchResults)}
+              className='search-results-list-item'
+            >
               {searchResults.procedureName}
             </li>
           ))}

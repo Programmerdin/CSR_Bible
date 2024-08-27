@@ -2,6 +2,8 @@ import React from 'react';
 import SearchBar from '../components/SearchBar';
 import BackButton from '../components/BackButton';
 
+
+
 const SearchView = () => {
   return (
     <div>

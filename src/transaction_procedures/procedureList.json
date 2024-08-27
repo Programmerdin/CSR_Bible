@@ -11,7 +11,22 @@
   },
   {
     "procedureNumber": "0003",
-    "procedureName": "credit card",
-    "tags"  : ["credit card", "USD"]
+    "procedureName": "Pay Credit Card with Cash Canadian",
+    "tags"  : ["credit card", "CAD", "cash"]
+  },
+  {
+    "procedureNumber": "0004",
+    "procedureName": "Pay USD Visa with USD Cash",
+    "tags"  : ["credit card", "Foreign", "usd", "cash", "visa"]
+  },
+  {
+    "procedureNumber": "0005",
+    "procedureName": "Pay USD Visa with Instrument",
+    "tags"  : ["credit card", "Foreign", "usd", "instrument", "visa", "cheque", "check", "bank draft"]
+  },
+  {
+    "procedureNumber": "0006",
+    "procedureName": "Pay USD Visa with CAD Cash",
+    "tags"  : ["credit card", "Foreign", "usd", "instrument", "visa", "cash", "cad"]
   }
 ]
