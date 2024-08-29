@@ -1,14 +1,16 @@
-import React from 'react';
-import HomeIcon from '@mui/icons-material/Home';
-import SearchIcon from '@mui/icons-material/Search';
-import { currentViewAtom, lastViewAtom } from '../atoms/viewAtom';
-
-import './BottomNavigationBar.css';
+import { useState } from 'react';
 import { useAtom } from 'jotai';
+import { currentViewAtom, lastViewAtom } from '../atoms/viewAtom';
+import Search_Thin_Icon from '../assets/icons/search_thin.png';
+import Search_Thick_Icon from '../assets/icons/search_thick.png';
+import Home_Unfilled_Icon from '../assets/icons/home_unfilled.png';
+import Home_Filled_Icon from '../assets/icons/home_filled.png';
+
 
 const BottomNavigationBar = () => {
   const [currentView, setCurrentView] = useAtom(currentViewAtom);
   const [lastView, setLastView] = useAtom(lastViewAtom);
+  
 
   const handleHomeIconClick = () => {
     console.log('Home icon clicked');
@@ -24,12 +26,12 @@ const BottomNavigationBar = () => {
 
 
   return (
-    <div className="bottom-navigation-bar">
-      <div className="nav-link" onClick={handleHomeIconClick}>
-        <HomeIcon style={{ fontSize: 64 }}/>
+    <div className="fixed bottom-0 w-full bg-white border-t border-gray-200 flex justify-around py-2">
+      <div onClick={handleHomeIconClick}>
+        <img src={currentView === 'home' ? Home_Filled_Icon : Home_Unfilled_Icon} className="w-7"/>
       </div>
-      <div className="nav-link" onClick={handleSearchIconClick}>
-        <SearchIcon style={{ fontSize: 64 }}/>
+      <div onClick={handleSearchIconClick}>
+        <img src={currentView === 'search' ? Search_Thick_Icon : Search_Thin_Icon} className="w-7"/>
       </div>
     </div>
   );

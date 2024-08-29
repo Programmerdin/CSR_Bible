@@ -14,7 +14,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className=''>
       <div className='Main-View'>
         {/* <Procedure procedureNumber={"0002"}/> */}
         {currentView === 'home' ? <HomeView /> : 
