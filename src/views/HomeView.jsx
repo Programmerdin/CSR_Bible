@@ -11,7 +11,7 @@ const HomeView = () => {
 
   return (
     <div>
-      <h1>CSR Manual</h1>
+      <h1 className=''>CSR Manual</h1>
     </div>
   );
 };

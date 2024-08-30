@@ -1,11 +1,12 @@
 {
   "steps": [
     {
-      "image": "0001-1.png",
-      "text": "Greet the <strong>customer</strong>."
+      "text": "<p className='font-bold'>COINS 12 - 1 - 1</p>"
     },
     {
-      "image": "0001-2.png",
+      "image": "0001-2.png"
+    },
+    {
       "text": "Verify the <span style='color:red;'>check</span>."
     }
   ]

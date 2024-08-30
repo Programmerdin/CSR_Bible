@@ -1,7 +1,6 @@
 import searchIcon from '../assets/icons/searchGray.png';
 import Fuse from 'fuse.js';
 import procedureList from '../transaction_procedures/procedureList.json';
-
 import { useAtom } from 'jotai';
 import { currentViewAtom, lastViewAtom } from '../atoms/viewAtom';
 import { currentProcedureAtom } from '../atoms/procedureAtom';
@@ -22,6 +21,7 @@ const SearchBar = () => {
       'tags'
     ],
   });
+
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);

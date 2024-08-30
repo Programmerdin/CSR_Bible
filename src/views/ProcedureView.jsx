@@ -10,7 +10,8 @@ const ProcedureView = () => {
 
   return (
     <div>
-      <BackButton />
+      <div className='pl-3 pt-3'><BackButton/></div>
+      
       <Procedure procedureNumber={currentProcedure}/>
     </div>
   );

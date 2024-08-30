@@ -32,19 +32,20 @@ const Procedure = ({ procedureNumber }) => {
   if (!procedure) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>{procedureName}</h1>
-      <p>Tags: {tags.join(', ')}</p>
-      <p>Steps:</p>
+    <div className='flex flex-col justify-center items-center'>
+      <h1 className='text-2xl font-bold pb-4 underline'>{procedureName}</h1>
       {procedure.steps.map((step, index) => {
         return (
           <div key={index}>
-            <p>Image: {step.image}</p>
-            <img 
-              src={`../src/transaction_procedures/${procedureNumber}/${step.image}`}
-              style={{ width: '1080px'}}
-            />
-            <p>Text: {step.text}</p>
+            {step.image && (
+              <img 
+                src={`../src/transaction_procedures/${procedureNumber}/${step.image}`}
+                style={{ width: '1080px'}}
+              />
+            )}
+            {step.text && (
+              <div dangerouslySetInnerHTML={{ __html: step.text }} />
+            )}
           </div>
         );
       })}

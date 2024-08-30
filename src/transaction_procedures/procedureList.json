@@ -1,32 +1,32 @@
 [
   {
     "procedureNumber": "0001",
-    "procedureName": "Bank Draft Canadian",
-    "tags"  : ["bank Draft", "canadian", "test"]
+    "procedureName": "Bank Draft in CAD",
+    "tags"  : ["bank draft", "canadian", "instrument", "cashier's check"]
   },
   {
     "procedureNumber": "0002",
-    "procedureName": "Bank Draft Foreign",
-    "tags"  : ["bank Draft", "Foreign"]
+    "procedureName": "Bank Draft in Foreign Currency",
+    "tags"  : ["bank draft", "Foreign", "instrument", "cashier's check", "currency"]
   },
   {
     "procedureNumber": "0003",
-    "procedureName": "Pay Credit Card with Cash Canadian",
-    "tags"  : ["credit card", "CAD", "cash"]
+    "procedureName": "Pay Credit Card with Cash CAD",
+    "tags"  : ["credit card", "CAD", "cash", "visa", "mastercard"]
   },
   {
     "procedureNumber": "0004",
     "procedureName": "Pay USD Visa with USD Cash",
-    "tags"  : ["credit card", "Foreign", "usd", "cash", "visa"]
+    "tags"  : ["credit card", "foreign", "usd", "cash", "visa"]
   },
   {
     "procedureNumber": "0005",
     "procedureName": "Pay USD Visa with Instrument",
-    "tags"  : ["credit card", "Foreign", "usd", "instrument", "visa", "cheque", "check", "bank draft"]
+    "tags"  : ["credit card", "Foreign", "usd", "instrument", "visa", "cheque", "check"]
   },
   {
     "procedureNumber": "0006",
     "procedureName": "Pay USD Visa with CAD Cash",
-    "tags"  : ["credit card", "Foreign", "usd", "instrument", "visa", "cash", "cad"]
+    "tags"  : ["credit card", "foreign", "usd", "instrument", "visa", "cash", "cad"]
   }
 ]
