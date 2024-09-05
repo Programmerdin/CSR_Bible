@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Procedure from './components/Procedure';
 import ProcedureView from './views/ProcedureView';
 import SearchView from './views/SearchView';
 import HomeView from './views/HomeView';
@@ -16,7 +15,6 @@ function App() {
   return (
     <div className=''>
       <div className='Main-View'>
-        {/* <Procedure procedureNumber={"0002"}/> */}
         {currentView === 'home' ? <HomeView /> : 
         currentView === 'procedure' ? <ProcedureView /> : 
         currentView === 'search' ? <SearchView /> : null}

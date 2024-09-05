@@ -2,7 +2,7 @@
   {
     "procedureNumber": "0001",
     "procedureName": "Bank Draft in CAD",
-    "tags"  : ["bank draft", "canadian", "instrument", "cashier's check"]
+    "tags"  : ["bank draft", "canadian", "instrument", "cashier's check", "money order"]
   },
   {
     "procedureNumber": "0002",
