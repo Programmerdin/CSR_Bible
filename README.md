@@ -1,8 +1,5 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To add a new transaction procedure:
+-Create a new folder in the "transaction_procedures" folder with the procedure number as the name e.g. 0006
+-Create a new file in the folder with the name Procedure0006.jsx
+-add the procedure to the "TransactionProcedureMap.jsx" in the "components" folder
+-add the procedure to "proedureList.json" 

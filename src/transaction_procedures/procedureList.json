@@ -13,6 +13,11 @@
     "procedureNumber": "0003",
     "procedureName": "Pay Credit Card with Cash",
     "tags"  : ["credit card", "cad", "usd", "cash", "visa", "mastercard"]
+  },
+  {
+    "procedureNumber": "0004",
+    "procedureName": "Wire Transfer",
+    "tags"  : ["wire transfer", "foreign", "wire", "cable"]
   }
 
 ]

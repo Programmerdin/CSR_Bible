@@ -1,10 +1,10 @@
 import React from 'react';
 import '../TransactionProcedures.css';
 
-import i1 from './0006-1.png'
-import i2 from './0006-2.png'
-import i3 from './0006-3.png'
-import i4 from './0006-4.png'
+import i1 from './0003-1.png'
+import i2 from './0003-2.png'
+import i3 from './0003-3.png'
+import i4 from './0003-4.png'
 
 function Procedure0003() {
   return (
