@@ -18,6 +18,10 @@
     "procedureNumber": "0004",
     "procedureName": "Wire Transfer",
     "tags"  : ["wire transfer", "foreign", "wire", "cable"]
+  },
+  {
+    "procedureNumber": "0005",
+    "procedureName": "Outgoing C/List for USD cheques",
+    "tags"  : ["check", "cheque", "usd", "instruments", "clist", "c-list","closing"] 
   }
-
 ]
