@@ -23,5 +23,10 @@
     "procedureNumber": "0005",
     "procedureName": "Outgoing C/List for USD cheques",
     "tags"  : ["check", "cheque", "usd", "instruments", "clist", "c-list","closing"] 
+  },
+  {
+    "procedureNumber":"0006",
+    "procedureName": "Settlement Draft for U Bill (Closing)",
+    "tags"  :["ubill","u-bill","unregistered","bill","tax","cra","business tax","settlement", "draft", "closing", "balancing"]
   }
 ]
