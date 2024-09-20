@@ -1,22 +1,47 @@
 // create a basic component
 import React from 'react';
 
+import '../TransactionProcedures.css';
+import i1 from './0001-1.png'
+import i2 from './0001-2.png'
+import i3 from './0001-3.png'
 import i4 from './0001-4.png'
 import i5 from './0001-5.png'
 import i6 from './0001-6.png'
-import i7 from './0001-7.png'
-import i8 from './0001-8.png'
-import i9 from './0001-9.png'
-import i10 from './0001-10.png'
-import i11 from './0001-11.png'
+
 
 function Procedure0001() {
   return (
-    <div className='flex flex-col items-center'>
-      <p className='text-4xl font-bold'>Bank Draft in CAD</p>
-      <p className='text-2xl font-bold'>COINS 12 - 1 - 1</p>
-      <img src={i4} />
-      <img src={i8} />
+    <div className='procedure-container'>
+      <p className='procedure-title'>Bank Draft in CAD</p>
+      <p className='procedure-big-text'>COINS 12 - 1 - 1</p>
+      <img className='procedure-image' src={i1} />
+      <p className='procedure-small-text'>PAY TO THE ORDER OF: Name of Beneficiary</p>
+      <p className='procedure-small-text'>AMT. : Type in amount in CAD</p>
+      <p className='procedure-small-text'>NAME OF REMITTER: Copy & Paste client's name from CBFE</p>
+      <p className='procedure-small-text'>SOURCE OF FUNDS: 1</p>
+      <p className='procedure-small-text'>TR/ACCT: Type in client's CAD account info</p>
+      <p className='procedure-small-text'>Press ENTER</p>
+      <div className='gap'></div>
+
+      <img className='procedure-image' src={i2} />
+      <p className='procedure-small-text'>Press ENTER</p>
+      <div className='gap'></div>
+
+      <img className='procedure-image' src={i3} />
+      <p className='procedure-small-text'>Press F1</p>
+      <div className='gap'></div>
+
+      <img className='procedure-image' src={i4} />
+      <p className='procedure-small-text'>Get Override</p>
+      <div className='gap'></div>
+
+      <img className='procedure-image' src={i5} />
+      <p className='procedure-small-text'>Choose the printer for Drafts</p>
+      <div className='gap'></div>
+
+      <img className='procedure-image' src={i6} />
+      <p className='procedure-small-text'>Put the Draft slip and CAD slips together into an envelope</p>
     </div>
   );
 }
