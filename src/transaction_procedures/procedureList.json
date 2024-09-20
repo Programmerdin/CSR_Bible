@@ -28,5 +28,15 @@
     "procedureNumber":"0006",
     "procedureName": "Settlement Draft for U Bill (Closing)",
     "tags"  :["ubill","u-bill","unregistered","bill","tax","cra","business tax","settlement", "draft", "closing", "balancing"]
+  },
+  {
+    "procedureNumber":"0007",
+    "procedureName": "Mortgage Payout",
+    "tags"  :["mortgage", "payout"]
+  },
+  {
+    "procedureNumber":"0008",
+    "procedureName": "USD Cash Deposit to USD Account",
+    "tags"  :["usd", "cash", "american", "dollar", "account", "deposit", "foreign"]
   }
 ]
