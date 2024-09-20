@@ -92,6 +92,7 @@ function Procedure0002() {
 
       <img className='procedure-image' src={i13} />
       <p className='procedure-small-text'>Get Client's Signature</p>
+      <p className='procedure-small-text'>(the draft shown above is CAD draft but has all the features in the same format)</p>
       <div className='gap'></div>
 
       <img className='procedure-image' src={i15} />
