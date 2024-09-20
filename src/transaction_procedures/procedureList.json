@@ -6,8 +6,8 @@
   },
   {
     "procedureNumber": "0002",
-    "procedureName": "Bank Draft in Foreign Currency",
-    "tags"  : ["bank draft", "Foreign", "instrument", "cashier's check", "currency"]
+    "procedureName": "Bank Draft in USD",
+    "tags"  : ["bank draft", "Foreign", "instrument", "cashier's check", "currency", "usd", "usd draft"]
   },
   {
     "procedureNumber": "0003",
