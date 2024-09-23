@@ -38,5 +38,10 @@
     "procedureNumber":"0008",
     "procedureName": "USD Cash Deposit to USD Account",
     "tags"  :["usd", "cash", "american", "dollar", "account", "deposit", "foreign"]
+  },
+  {
+    "procedureNumber":"0009",
+    "procedureName": "Change Account Statement Type (Mail/eStatement/Mailing Frequency)",
+    "tags"  :["account", "statement", "change", "mailed", "estatement", "monthly"]
   }
 ]

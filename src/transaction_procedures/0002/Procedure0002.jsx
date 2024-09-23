@@ -87,7 +87,7 @@ function Procedure0002() {
       <img className='procedure-image' src={i12} />
       <p className='procedure-small-text'>Press ENTER to print Debit Slip</p>
       <img className='procedure-image' src={i14} />
-      <p className='procedure-small-text'>Insert Double-sided Debit Slip into the printer</p>
+      <p className='procedure-small-text'>Insert Double Debit Slip into the printer</p>
       <div className='gap'></div>
 
       <img className='procedure-image' src={i13} />

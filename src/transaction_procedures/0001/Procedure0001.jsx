@@ -8,6 +8,9 @@ import i3 from './0001-3.png'
 import i4 from './0001-4.png'
 import i5 from './0001-5.png'
 import i6 from './0001-6.png'
+import i7 from './0001-7.png'
+import i8 from './0001-8.png'
+import i9 from './0001-9.png'
 
 
 function Procedure0001() {
@@ -41,7 +44,24 @@ function Procedure0001() {
       <div className='gap'></div>
 
       <img className='procedure-image' src={i6} />
-      <p className='procedure-small-text'>Put the Draft slip and CAD slips together into an envelope</p>
+      <p className='procedure-small-text'>Insert Double Debit Slip into the printer (below image)</p>
+      <img className='procedure-image' src={i8} />
+      <div className='gap'></div>
+
+      <img className='procedure-image' src={i7} />
+      <img className='procedure-image' src={i9} />
+      <p className='procedure-small-text'>Get Client's signature on Draft and Debit slip</p>
+      <div className='gap'></div>
+
+      <p className='procedure-small-text'>Tear off Printed Draft paper into 3 separate pieces</p>
+      <p className='procedure-small-text'>Top: Actual Bank Draft</p>
+      <p className='procedure-small-text'>Middle: Client Copy</p>
+      <p className='procedure-small-text'>Bottom: Branch Copy</p>
+      <div className='gap'></div>
+
+      <p className='procedure-small-text'>Tear off Printed Debit Slip into 2 pieces</p>
+      <p className='procedure-small-text'>Staple together one of the debit slip with Client Copy of Draft</p>
+      <p className='procedure-small-text'>Staple together the other piece of debit slip with Branch Copy of Draft</p>
     </div>
   );
 }
