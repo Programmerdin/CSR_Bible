@@ -12,7 +12,7 @@ import i4 from './0008-4.png'
 function Procedure0008() {
   return (
     <div className='procedure-container'>
-      <p className='procedure-title'>USD Cash Deposit to USD Account</p>
+      <p className='procedure-title'>Deposit USD Cash to USD Account</p>
       <p className='procedure-big-text'>Process deposit on CBFE</p>
       <img className='procedure-image' src={i1} />
       <p className='procedure-small-text'>Print out Branch Copy</p>

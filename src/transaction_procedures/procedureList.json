@@ -36,12 +36,22 @@
   },
   {
     "procedureNumber":"0008",
-    "procedureName": "USD Cash Deposit to USD Account",
-    "tags"  :["usd", "cash", "american", "dollar", "account", "deposit", "foreign"]
+    "procedureName": "Deposit USD Cash to USD Account",
+    "tags"  :["usd", "cash", "american", "dollar", "account", "deposit", "foreign", "coins", "idt"]
   },
   {
     "procedureNumber":"0009",
     "procedureName": "Change Account Statement Type (Mail/eStatement/Mailing Frequency)",
     "tags"  :["account", "statement", "change", "mailed", "estatement", "monthly"]
+  },
+  {
+    "procedureNumber":"0010",
+    "procedureName": "Deposit Foreign/USD Cheque to CAD Account", 
+    "tags"  :["usd", "american", "dollar", "account", "deposit", "foreign", "coins", "buy ticket", "currency", "exchange", "buy", "cheque", "check"]
+  },
+  {
+    "procedureNumber":"0011",
+    "procedureName": "Deposit USD Cheque to USD Account", 
+    "tags"  :["usd", "american", "dollar", "account", "deposit", "foreign", "coins", "buy ticket", "currency", "exchange", "buy", "cheque", "check"]
   }
 ]
