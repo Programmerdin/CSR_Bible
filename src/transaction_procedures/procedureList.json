@@ -21,8 +21,8 @@
   },
   {
     "procedureNumber": "0005",
-    "procedureName": "Outgoing C/List for USD cheques",
-    "tags"  : ["check", "cheque", "usd", "instruments", "clist", "c-list","closing"] 
+    "procedureName": "Outgoing C/List for USD cheques (Closing)",
+    "tags"  : ["check", "cheque", "usd", "instruments", "clist", "c-list", "closing"] 
   },
   {
     "procedureNumber":"0006",
@@ -53,5 +53,20 @@
     "procedureNumber":"0011",
     "procedureName": "Deposit USD Cheque to USD Account", 
     "tags"  :["usd", "american", "dollar", "account", "deposit", "foreign", "coins", "buy ticket", "currency", "exchange", "buy", "cheque", "check"]
+  },
+  {
+    "procedureNumber":"0012",
+    "procedureName": "Close Account (Chequing, Saving, USD Accounts)", 
+    "tags"  :["close", "account", "closing", "cancel"]
+  },
+  {
+    "procedureNumber":"0013",
+    "procedureName": "Pay USD Visa with USD Cheque", 
+    "tags"  :["USD", "Visa", "Cheque", "Payment", "credit card", "bill", "usdvisa", "instrument"] 
+  },
+  {
+    "procedureNumber":"0014",
+    "procedureName": "Traders RSG - Currency Exchange", 
+    "tags"  :["usd", "deposit", "foreign", "currency", "exchange", "fx", "Trader", "RSG", "traders"]
   }
 ]

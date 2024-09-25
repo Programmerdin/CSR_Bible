@@ -14,7 +14,7 @@ import i8 from './0005-8.png'
 function Procedure0005() {
   return (
     <div className='procedure-container'>
-      <p className='procedure-title'>Outgoing C/List for USD cheques</p>
+      <p className='procedure-title'>Outgoing C/List for USD cheques (Closing)</p>
       <p className='procedure-big-text'>COINS 11 - 4</p>
 
       <img className='procedure-image' src={i1} />
