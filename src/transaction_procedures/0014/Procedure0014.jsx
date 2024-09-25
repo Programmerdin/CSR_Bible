@@ -62,6 +62,8 @@ function Procedure0014() {
 
       <p className='procedure-big-text'>CBFE</p>
       <img className='procedure-image' src={i7} />
+      <div className='gap'></div>
+      
       <p className='procedure-small-text'>Credit the account that is the buying side of the exchange</p>
       <img className='procedure-image' src={i9} />
       <p className='procedure-small-text'>Buy $2 USD, Sell $2.5 CAD = Credit $2 USD to Client's USD Account & Debit $2.5 CAD from Client's CAD Account</p>
@@ -69,6 +71,8 @@ function Procedure0014() {
       <div className='gap'></div>
 
       <img className='procedure-image' src={i7} />
+      <div className='gap'></div>
+
       <p className='procedure-small-text'>Debit the account that is the selling side of the exchange (Requires Supervisor Override usually)</p>
       <img className='procedure-image' src={i8} />
       <p className='procedure-small-text'>Buy $2 USD, Sell $2.5 CAD = Credit $2 USD to Client's USD Account & Debit $2.5 CAD from Client's CAD Account</p>
