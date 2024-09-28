@@ -1,4 +1,5 @@
 import searchIcon from '../assets/icons/searchGray.png';
+import xIcon from '../assets/icons/x-icon.png';
 import Fuse from 'fuse.js';
 import procedureList from '../transaction_procedures/procedureList.json';
 import { useAtom } from 'jotai';
@@ -42,9 +43,9 @@ const SearchBar = () => {
       {query && (
         <button
           onClick={handleClearInput}
-          className="absolute right-3 top-2 text-gray-500 hover:text-gray-700"
+          className="absolute right-3 pt-3 text-gray-500 hover:text-gray-700"
         >
-          X
+          <img src={xIcon} className="w-4" alt="x icon" />
         </button>
       )}
     </div>
