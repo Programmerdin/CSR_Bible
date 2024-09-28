@@ -13,7 +13,7 @@ const BackButton = () => {
   };
 
   return (
-    <button onClick={onClick} className="back-button">
+    <button onClick={onClick}>
       <img src={left_arrow} className="w-8" />
     </button>
   );
