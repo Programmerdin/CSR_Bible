@@ -28,27 +28,26 @@ const SearchResults = () => {
       setRecentVisitHistory(filteredHistory);
       console.log('Loaded history from local storage:', filteredHistory);
     }
-  }, [setRecentVisitHistory, procedureList]); // Include procedureList as a dependency if it's defined in the scope
-
-  
+  }, [setRecentVisitHistory, procedureList]);
 
   const handleSearchResultsClick = (searchResult) => {
     setLastView(currentView);
     setCurrentProcedure(searchResult.procedureNumber);
     setCurrentView('procedure');
 
-    // Add the new result to the visit history if it's not the same as the last item
-    if (searchResult.procedureNumber && searchResult.procedureNumber !== recentVisitHistory[recentVisitHistory.length - 1]) {
-      let finalHistory = [...recentVisitHistory, searchResult.procedureNumber];
+    // Check if the procedureNumber is valid and not the same as the last item
+    if (searchResult.procedureNumber && 
+        (!recentVisitHistory.length || searchResult.procedureNumber !== recentVisitHistory[recentVisitHistory.length - 1]?.procedureNumber)) {
+      
+      // Create an updated history by combining the existing history with the new entry
+      const updatedHistory = [...recentVisitHistory.map(proc => proc.procedureNumber), searchResult.procedureNumber];
 
-      // Limit history to the last 100 entries if it exceeds 200
-      if (finalHistory.length > 200) {
-        finalHistory = finalHistory.slice(finalHistory.length - 100);
-      }
+      // Limit history to the last 200 entries if it exceeds 200
+      const limitedHistory = updatedHistory.length > 200 ? updatedHistory.slice(-200) : updatedHistory;
 
       // Update state and local storage
-      setRecentVisitHistory(finalHistory);
-      localStorage.setItem('recentVisitHistory', JSON.stringify(finalHistory));
+      setRecentVisitHistory(limitedHistory);
+      localStorage.setItem('recentVisitHistory', JSON.stringify(limitedHistory));
     }
   };
 
