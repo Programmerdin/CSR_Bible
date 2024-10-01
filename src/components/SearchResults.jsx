@@ -64,7 +64,7 @@ const SearchResults = () => {
                 onClick={() => handleSearchResultsClick(visitHistory)}
                 className='flex items-center text-base text-gray-500 py-3 pl-4 hover:bg-[#f6f6f6] active:bg-[#f6f6f6] cursor-pointer'
               > 
-                <img src={historyIcon} className="w-5 mr-3 opacity-50" />
+                <img src={historyIcon} className="w-6 mr-2 opacity-50" />
                 {visitHistory.procedureName}
               </li>
             ))
