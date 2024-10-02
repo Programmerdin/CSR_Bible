@@ -68,5 +68,25 @@
     "procedureNumber":"0014",
     "procedureName": "Traders RSG - Currency Exchange", 
     "tags"  :["usd", "deposit", "foreign", "currency", "exchange", "fx", "Trader", "RSG", "traders"]
+  },
+  {
+    "procedureNumber":"0015",
+    "procedureName": "Find Client's Advisor",  
+    "tags"  :["FA", "advisor", "financial advisor", "contact", "find", "client", "manager", "account", "portfolio", "number"]
+  },
+  {
+    "procedureNumber":"0016",
+    "procedureName": "Open a New Safety Deposit Box",  
+    "tags"  :["SDB", "new", "contract", "safety", "deposit", "box", "open"]
+  },
+  {
+    "procedureNumber":"0017",
+    "procedureName": "Close Safety Deposit Box",  
+    "tags"  :["SDB", "old", "contract", "safety", "deposit", "box", "cancel"]
+  },
+  {
+    "procedureNumber":"0018",
+    "procedureName": "Pay USD Visa with USD Account",  
+    "tags"  :["USD", "visa", "credit card", "account", "payment", "bill", "pay", "foreign", "currency"]
   }
 ]

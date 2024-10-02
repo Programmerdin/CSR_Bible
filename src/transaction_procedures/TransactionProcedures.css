@@ -19,9 +19,12 @@
   margin-bottom: 8px;
 }
 
-.procedure-regular-text {
+.procedure-small-text {
   font-size: 16px;
-  margin-bottom: 8px;
+}
+
+.procedure-tiny-text {
+  font-size: 12px;
 }
 
 .procedure-image {
