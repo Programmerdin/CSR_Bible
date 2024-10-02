@@ -26,7 +26,6 @@ const SearchResults = () => {
         .filter(proc => proc !== null); // Filter out any nulls
 
       setRecentVisitHistory(filteredHistory);
-      console.log('Loaded history from local storage:', filteredHistory);
     }
   }, [setRecentVisitHistory, procedureList]);
 

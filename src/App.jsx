@@ -5,12 +5,22 @@ import HomeView from './views/HomeView';
 import BottomNavigationBar from './components/BottomNavigationBar';
 import './App.css';
 import { useAtom } from 'jotai';
+import { currentProcedureAtom, savedProceduresAtom } from './atoms/procedureAtom';
 import { currentViewAtom, lastViewAtom } from './atoms/viewAtom';
 
 function App() {
   const [currentView, setcurrentView] = useAtom(currentViewAtom);
   const [lastView, setLastView] = useState(lastViewAtom);
+  const [savedProcedures, setSavedProcedures] = useAtom(savedProceduresAtom);
 
+  useEffect(() => {
+    const storedSavedProcedures = localStorage.getItem('savedProcedures');
+    if (storedSavedProcedures) {
+      const parsedSavedProcedures = [...new Set(JSON.parse(storedSavedProcedures))];
+      setSavedProcedures(parsedSavedProcedures);
+    }
+  }, []);
+  
 
   return (
     <div className=''>

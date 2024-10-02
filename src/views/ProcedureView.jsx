@@ -4,6 +4,7 @@ import TransactionProcedureMap from '../components/TransactionProcedureMap';
 
 import { useAtom } from 'jotai';
 import {currentProcedureAtom} from '../atoms/procedureAtom';
+import SaveProcedureButton from '../components/SaveProcedureButton';
 
 const ProcedureView = () => {
   const [currentProcedure, setCurrentProcedure] = useAtom(currentProcedureAtom);
@@ -12,7 +13,10 @@ const ProcedureView = () => {
 
   return (
     <div>
-      <div className='pl-3 pt-3'><BackButton/></div>
+      <div className='pl-3 pt-3'>
+        <BackButton/>
+        <SaveProcedureButton/>
+      </div>
       {TransactionProcedureComponent ? <TransactionProcedureComponent /> : <div>No TransactionProcedureComponent found</div>}
     </div>
   );
