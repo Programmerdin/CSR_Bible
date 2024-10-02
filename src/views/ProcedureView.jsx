@@ -13,9 +13,9 @@ const ProcedureView = () => {
 
   return (
     <div>
-      <div className='pl-3 pt-3'>
-        <BackButton/>
-        <SaveProcedureButton/>
+      <div className="flex justify-between items-center pl-3 pt-3">
+        <BackButton />
+        <SaveProcedureButton />
       </div>
       {TransactionProcedureComponent ? <TransactionProcedureComponent /> : <div>No TransactionProcedureComponent found</div>}
     </div>

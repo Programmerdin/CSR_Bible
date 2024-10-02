@@ -37,6 +37,7 @@ const SaveProcedureButton = () => {
   return (
     <button onClick={onClick}>
       <img src={saved ? save_filled : save_unfilled} className="w-8" />
+      <p className="">{saved ? '' : 'Save'}</p>
     </button>
   );
 };
