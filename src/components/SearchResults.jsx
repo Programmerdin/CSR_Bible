@@ -31,6 +31,7 @@ const SearchResults = () => {
   }, [setRecentVisitHistory, procedureList]);
 
   const handleSearchResultsClick = (searchResult) => {
+    setQuery('');
     setLastView(currentView);
     setCurrentProcedure(searchResult.procedureNumber);
     setCurrentView('procedure');
@@ -48,6 +49,7 @@ const SearchResults = () => {
       // Update state and local storage
       setRecentVisitHistory(limitedHistory);
       localStorage.setItem('recentVisitHistory', JSON.stringify(limitedHistory));
+
     }
   };
 
@@ -73,7 +75,7 @@ const SearchResults = () => {
       }
 
 
-      {searchResults && searchResults.length > 0 && (
+      {searchResults && searchResults.length > 0 && query !== '' && (
         <ul>
           {searchResults.map((searchResult, index) => (
             <li
