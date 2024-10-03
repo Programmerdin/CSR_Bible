@@ -23,7 +23,7 @@ function App() {
   
 
   return (
-    <div className=''>
+    <div className='max-w-[1100px]'>
       <div className='Main-View'>
         {currentView === 'home' ? <HomeView /> : 
         currentView === 'procedure' ? <ProcedureView /> : 
