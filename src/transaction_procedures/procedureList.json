@@ -88,5 +88,20 @@
     "procedureNumber":"0018",
     "procedureName": "Pay USD Visa with USD Account",  
     "tags"  :["USD", "visa", "credit card", "account", "payment", "bill", "pay", "foreign", "currency"]
+  },
+  {
+    "procedureNumber":"0019",
+    "procedureName": "U Bill",  
+    "tags"  :["ubill", "utility", "bill", "unregistered", "tax", "cra", "business", "u", "debit"]
+  },
+  {
+    "procedureNumber":"0020",
+    "procedureName": "Withdraw USD Cash from USD Account",  
+    "tags"  :["USD", "cash", "account", "withdrawal", "foreign", "currency", "withdraw", "American", "dollar"]
+  },
+  {
+    "procedureNumber":"0021",
+    "procedureName": "Order Cheques for Personal Chequing Accounts",  
+    "tags"  :["cheque", "chequing", "cheques", "checks", "check", "account", "order", "book", "personal"]
   }
 ]
