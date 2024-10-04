@@ -3,10 +3,10 @@ import { useAtom } from 'jotai';
 import { currentViewAtom, lastViewAtom } from '../atoms/viewAtom';
 import { currentProcedureAtom, savedProceduresAtom } from '../atoms/procedureAtom';
 import procedureList from '../transaction_procedures/procedureList.json';
-import SavedProceduresDisplay from '../components/SavedProceduresDisplay';
+import threeLinesIcon from '../assets/icons/threeLines.png';
 
 
-const HomeView = () => {
+const SavedProceduresDisplay = () => {
   const [currentView, setCurrentView] = useAtom(currentViewAtom);
   const [lastView, setLastView] = useAtom(lastViewAtom);
   const [currentProcedure, setCurrentProcedure] = useAtom(currentProcedureAtom);
@@ -28,11 +28,23 @@ const HomeView = () => {
   };
 
   return (
-    <div className=''>
-      <SavedProceduresDisplay />
+    <div className='bg-gray-200 rounded-lg m-2 text-center'>
+      <p className='font text-3xl font-bold mb-3'>Saved</p>
+      <ul>
+        {[...savedProceduresWithDetails].reverse().map((proc, index) => (
+          <li 
+            key={index} 
+            className='flex items-center rounded-xl py-3 pl-2 hover:bg-[#9CA3AF] active:bg-[#9CA3AF] cursor-pointer'
+            onClick={() => handleSavedProceduresClick(proc.procedureNumber)}
+          >
+            <img src={threeLinesIcon} className='w-6 mr-3'></img>
+            {proc.procedureName}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
 
-export default HomeView;
+export default SavedProceduresDisplay;
 

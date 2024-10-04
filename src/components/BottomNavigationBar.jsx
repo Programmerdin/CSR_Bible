@@ -28,10 +28,10 @@ const BottomNavigationBar = () => {
   return (
     <div className="fixed bottom-0 w-full bg-white border-t border-gray-200 flex justify-around py-2">
       <div onClick={handleHomeIconClick}>
-        <img src={currentView === 'home' ? Home_Filled_Icon : Home_Unfilled_Icon} className="w-7"/>
+        <img src={currentView === 'home' ? Home_Filled_Icon : Home_Unfilled_Icon} className="w-7 cursor-pointer"/>
       </div>
       <div onClick={handleSearchIconClick}>
-        <img src={currentView === 'search' ? Search_Thick_Icon : Search_Thin_Icon} className="w-7"/>
+        <img src={currentView === 'search' ? Search_Thick_Icon : Search_Thin_Icon} className="w-7 cursor-pointer"/>
       </div>
     </div>
   );
