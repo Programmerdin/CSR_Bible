@@ -107,7 +107,7 @@ const SearchResults = () => {
               <li 
                 key={index}
                 onClick={() => handleSearchResultsClick(visitHistory)}
-                className={`flex items-center text-base text-gray-500 py-3 pl-4 hover:bg-[#f6f6f6] active:bg-[#f6f6f6] cursor-pointer ${highlightedIndex === index && isHistoryMode ? 'bg-[#e2e2e2]' : ''}`}
+                className={`flex items-center text-base text-gray-500 py-3 pl-4 hover:bg-[#f6f6f6] active:bg-[#f6f6f6] cursor-pointer ${highlightedIndex === index && isHistoryMode ? 'bg-[#f6f6f6]' : ''}`}
               > 
                 <img src={historyIcon} className="w-6 mr-2 opacity-50" />
                 {visitHistory.procedureName}
@@ -123,7 +123,7 @@ const SearchResults = () => {
             <li
               key={index}
               onClick={() => handleSearchResultsClick(searchResult)}
-              className={`text-base py-3 pl-4 hover:bg-[#f6f6f6] active:bg-[#f6f6f6] cursor-pointer ${highlightedIndex === index && !isHistoryMode ? 'bg-[#e2e2e2]' : ''}`}
+              className={`text-base py-3 pl-4 hover:bg-[#f6f6f6] active:bg-[#f6f6f6] cursor-pointer ${highlightedIndex === index && !isHistoryMode ? 'bg-[#f6f6f6]' : ''}`}
             >
               {searchResult.procedureName}
             </li>
