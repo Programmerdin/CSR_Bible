@@ -11,19 +11,25 @@ const BottomNavigationBar = () => {
   const [currentView, setCurrentView] = useAtom(currentViewAtom);
   const [lastView, setLastView] = useAtom(lastViewAtom);
   
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0
+    });
+  };
 
   const handleHomeIconClick = () => {
     console.log('Home icon clicked');
     setLastView(currentView);
     setCurrentView('home');
+    scrollToTop(); // Scroll to the top of the screen
   };
 
   const handleSearchIconClick = () => {
     console.log('Search icon clicked');
     setLastView(currentView);
     setCurrentView('search');
+    scrollToTop(); // Scroll to the top of the screen
   };
-
 
   return (
     <div className="fixed bottom-0 w-full bg-white border-t border-gray-200 flex justify-around py-2">
