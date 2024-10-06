@@ -1,5 +1,5 @@
 import { useAtom } from 'jotai';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { currentViewAtom, lastViewAtom } from '../atoms/viewAtom';
 import { currentProcedureAtom } from '../atoms/procedureAtom';
 import { queryAtom, searchResultsAtom, recentVisitHistoryAtom } from '../atoms/searchAtom';
@@ -15,6 +15,9 @@ const SearchResults = () => {
   const [lastView, setLastView] = useAtom(lastViewAtom);
   const [currentProcedure, setCurrentProcedure] = useAtom(currentProcedureAtom);
 
+  const [highlightedIndex, setHighlightedIndex] = useState(-1); // State for tracking highlighted index
+  const [isHistoryMode, setIsHistoryMode] = useState(true); // State to track whether we're in history or search results mode
+
   // Load recentVisitHistory from local storage when the component mounts
   useEffect(() => {
     const storedHistory = localStorage.getItem('recentVisitHistory');
@@ -29,18 +32,24 @@ const SearchResults = () => {
     }
   }, [setRecentVisitHistory, procedureList]);
 
-  const handleSearchResultsClick = (searchResult) => {
+  const handleSearchResultsClick = (item) => {
+    // Handle both search results and history items
+    const procedureNumber = item.procedureNumber || item; // item could be a procedure object or just a procedure number from history
+    const procedure = procedureList.find(proc => proc.procedureNumber === procedureNumber);
+
+    if (!procedure) return; // If no valid procedure, do nothing
+
     setQuery('');
     setLastView(currentView);
-    setCurrentProcedure(searchResult.procedureNumber);
+    setCurrentProcedure(procedureNumber);
     setCurrentView('procedure');
 
     // Check if the procedureNumber is valid and not the same as the last item
-    if (searchResult.procedureNumber && 
-        (!recentVisitHistory.length || searchResult.procedureNumber !== recentVisitHistory[recentVisitHistory.length - 1]?.procedureNumber)) {
+    if (procedureNumber && 
+        (!recentVisitHistory.length || procedureNumber !== recentVisitHistory[recentVisitHistory.length - 1]?.procedureNumber)) {
       
       // Create an updated history by combining the existing history with the new entry
-      const updatedHistory = [...recentVisitHistory.map(proc => proc.procedureNumber), searchResult.procedureNumber];
+      const updatedHistory = [...recentVisitHistory.map(proc => proc.procedureNumber), procedureNumber];
 
       // Limit history to the last 200 entries if it exceeds 200
       const limitedHistory = updatedHistory.length > 200 ? updatedHistory.slice(-200) : updatedHistory;
@@ -48,9 +57,44 @@ const SearchResults = () => {
       // Update state and local storage
       setRecentVisitHistory(limitedHistory);
       localStorage.setItem('recentVisitHistory', JSON.stringify(limitedHistory));
-
     }
   };
+
+  // Reset highlighted index when the query changes
+  useEffect(() => {
+    setHighlightedIndex(-1);
+    setIsHistoryMode(query === ''); // If query is empty, we're in history mode
+  }, [query]);
+
+  // Keydown event listener to navigate both search results and visit history
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      const currentList = isHistoryMode ? recentVisitHistory.slice(-10).reverse() : searchResults; // Use reversed list for rendering
+      if (currentList.length === 0) return;
+  
+      if (e.key === 'ArrowDown') {
+        e.preventDefault(); // Prevent cursor movement in the input
+        setHighlightedIndex((prevIndex) => 
+          (prevIndex + 1) % currentList.length
+        );
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault(); // Prevent cursor movement in the input
+        setHighlightedIndex((prevIndex) => 
+          (prevIndex - 1 + currentList.length) % currentList.length
+        );
+      } else if (e.key === 'Enter' && highlightedIndex !== -1) {
+        e.preventDefault(); // Prevent submitting or other default behavior
+        const selectedItem = currentList[highlightedIndex];
+        handleSearchResultsClick(selectedItem);
+      }
+    };
+  
+    window.addEventListener('keydown', handleKeyDown);
+  
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [highlightedIndex, searchResults, recentVisitHistory, isHistoryMode]);
 
   return (
     <div className=''>
@@ -63,7 +107,7 @@ const SearchResults = () => {
               <li 
                 key={index}
                 onClick={() => handleSearchResultsClick(visitHistory)}
-                className='flex items-center text-base text-gray-500 py-3 pl-4 hover:bg-[#f6f6f6] active:bg-[#f6f6f6] cursor-pointer'
+                className={`flex items-center text-base text-gray-500 py-3 pl-4 hover:bg-[#f6f6f6] active:bg-[#f6f6f6] cursor-pointer ${highlightedIndex === index && isHistoryMode ? 'bg-[#e2e2e2]' : ''}`}
               > 
                 <img src={historyIcon} className="w-6 mr-2 opacity-50" />
                 {visitHistory.procedureName}
@@ -73,14 +117,13 @@ const SearchResults = () => {
         </ul>
       }
 
-
       {searchResults && searchResults.length > 0 && query !== '' && (
         <ul>
           {searchResults.map((searchResult, index) => (
             <li
               key={index}
               onClick={() => handleSearchResultsClick(searchResult)}
-              className='text-base py-3 pl-4 hover:bg-[#f6f6f6] active:bg-[#f6f6f6] cursor-pointer'
+              className={`text-base py-3 pl-4 hover:bg-[#f6f6f6] active:bg-[#f6f6f6] cursor-pointer ${highlightedIndex === index && !isHistoryMode ? 'bg-[#e2e2e2]' : ''}`}
             >
               {searchResult.procedureName}
             </li>
