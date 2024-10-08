@@ -103,5 +103,10 @@
     "procedureNumber":"0021",
     "procedureName": "Order Cheques for Personal Chequing Accounts",  
     "tags"  :["cheque", "chequing", "cheques", "checks", "check", "account", "order", "book", "personal"]
+  },
+  {
+    "procedureNumber":"0022",
+    "procedureName": "How to Close (CSR)",  
+    "tags"  :["closing", "close", "end", "session", "how to close"]
   }
 ]
