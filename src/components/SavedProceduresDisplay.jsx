@@ -5,7 +5,6 @@ import { currentProcedureAtom, savedProceduresAtom } from '../atoms/procedureAto
 import procedureList from '../transaction_procedures/procedureList.json';
 import threeLinesIcon from '../assets/icons/threeLines.png';
 
-
 const SavedProceduresDisplay = () => {
   const [currentView, setCurrentView] = useAtom(currentViewAtom);
   const [lastView, setLastView] = useAtom(lastViewAtom);

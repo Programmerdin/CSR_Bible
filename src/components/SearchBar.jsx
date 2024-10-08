@@ -30,6 +30,12 @@ const SearchBar = () => {
     setSearchResults([]);  // Resets the search results
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.target.blur(); // Dismisses the keyboard
+    }
+  };
+
   return (
     <div className='relative'>
       <img src={searchIcon} className="absolute pt-2 ml-3.5 w-6 opacity-60" alt="search icon" />
@@ -37,6 +43,7 @@ const SearchBar = () => {
         type="text"
         value={query}
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
         className='py-2 pl-12 pr-8 rounded-2xl bg-opacity-85 bg-[#76768026] text-base text-black w-full outline-none'
         placeholder="Search"
       />
@@ -53,4 +60,3 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-
