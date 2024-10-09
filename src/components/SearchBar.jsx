@@ -40,16 +40,16 @@ const SearchBar = () => {
     <div className='relative'>
       <img src={searchIcon} className="absolute pt-2 ml-3.5 w-6 opacity-60" alt="search icon" />
       <input
+        type="search"
         value={query}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        className='py-2 pl-12 pr-8 rounded-2xl bg-opacity-85 bg-[#76768026] text-base text-black w-full outline-none'
+        className='py-2 pl-12 pr-8 rounded-2xl bg-opacity-85 bg-[#76768026] text-base text-black w-full outline-none no-underline'
         placeholder="Search"
         autoComplete="off"
         autoCorrect="off"
         spellCheck="false"
-        inputMode="search"   // Set input mode to search
-        type="search"        // Set type to search to optimize mobile experience
+        style={{ textDecoration: 'none' }}  // Inline style to ensure no underline
       />
       {query && (
         <button
