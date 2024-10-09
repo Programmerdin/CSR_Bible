@@ -46,9 +46,6 @@ const SearchBar = () => {
         onKeyDown={handleKeyDown}
         className='py-2 pl-12 pr-8 rounded-2xl bg-opacity-85 bg-[#76768026] text-base text-black w-full outline-none no-underline'
         placeholder="Search"
-        autoComplete="off"
-        autoCorrect="off"
-        spellCheck="false"
         style={{ textDecoration: 'none' }}  // Inline style to ensure no underline
       />
       {query && (
