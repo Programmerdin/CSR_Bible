@@ -40,7 +40,6 @@ const SearchBar = () => {
     <div className='relative'>
       <img src={searchIcon} className="absolute pt-2 ml-3.5 w-6 opacity-60" alt="search icon" />
       <input
-        type="text"
         value={query}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
@@ -49,6 +48,8 @@ const SearchBar = () => {
         autoComplete="off"
         autoCorrect="off"
         spellCheck="false"
+        inputMode="search"   // Set input mode to search
+        type="search"        // Set type to search to optimize mobile experience
       />
       {query && (
         <button
