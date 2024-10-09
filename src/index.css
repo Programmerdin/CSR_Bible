@@ -5,4 +5,8 @@
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   appearance: none;
+  text-decoration: none;   /* Removes underline */
+  -webkit-text-decoration: none; /* For WebKit browsers (like Chrome) */
+  spellcheck: false;       /* Disables spellcheck underline */
+  -webkit-user-modify: read-write-plaintext-only; /* Ensures no autocorrect/suggestion behavior */
 }
