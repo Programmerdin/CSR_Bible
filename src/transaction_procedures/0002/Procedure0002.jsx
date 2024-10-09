@@ -24,7 +24,7 @@ import i15 from './0002-15.png'
 function Procedure0002() {
   return (
     <div className='procedure-container'>
-      <p className='procedure-title'>Bank Draft in USD</p>
+      <p className='procedure-title'>Bank Draft in USD from USD Account</p>
       <p className='procedure-big-text'>COINS 11 - 15 - 1</p>
       <img className='procedure-image' src={i1} />
       <p className='procedure-small-text'>To Country: 110</p>
