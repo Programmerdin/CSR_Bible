@@ -7,6 +7,7 @@ import './App.css';
 import { useAtom } from 'jotai';
 import { currentProcedureAtom, savedProceduresAtom } from './atoms/procedureAtom';
 import { currentViewAtom, lastViewAtom } from './atoms/viewAtom';
+import { TellerDashboardJsx } from './components/teller-dashboard';
 
 function App() {
   const [currentView, setcurrentView] = useAtom(currentViewAtom);
@@ -30,6 +31,7 @@ function App() {
         currentView === 'search' ? <SearchView /> : null}
       </div>
       <BottomNavigationBar/>
+      <TellerDashboardJsx /> 
     </div>
   );
 }
