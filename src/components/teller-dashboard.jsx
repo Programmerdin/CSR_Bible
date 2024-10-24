@@ -1,12 +1,12 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { Search, Clock, Bookmark, ChevronRight, DollarSign, Lock, Send, FileText, CreditCard, Briefcase, HelpCircle } from 'lucide-react'
+import { Search, Clock, Bookmark, ChevronRight, DollarSign, Lock, Send, FileText, CreditCard, Briefcase, HelpCircle, X } from 'lucide-react'
 import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -32,6 +32,7 @@ export function TellerDashboardJsx() {
   const [currentProcedure, setCurrentProcedure] = useAtom(currentProcedureAtom)
   const [savedProcedures] = useAtom(savedProceduresAtom)
   const [savedProceduresWithDetails, setSavedProceduresWithDetails] = useState([])
+  const [highlightedIndex, setHighlightedIndex] = useState(-1)
 
   const fuse = new Fuse(procedureList, {
     keys: ['procedureNumber', 'procedureName', 'tags'],
@@ -45,17 +46,17 @@ export function TellerDashboardJsx() {
   }, [savedProcedures]);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (suggestionsRef.current && !suggestionsRef.current.contains(event.target)) {
-        setShowSuggestions(false)
-      }
-    }
+    const storedHistory = localStorage.getItem('recentVisitHistory');
+    if (storedHistory) {
+      const parsedHistory = JSON.parse(storedHistory);
+      const filteredHistory = parsedHistory
+        .filter(item => item != null) // Filter out null or undefined values
+        .map(procNum => procedureList.find(proc => proc.procedureNumber === procNum) || null) // Map to procedure objects
+        .filter(proc => proc !== null); // Filter out any nulls
 
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
+      setRecentVisitHistory(filteredHistory);
     }
-  }, [])
+  }, [setRecentVisitHistory, procedureList]);
 
   useEffect(() => {
     if (query.length > 0) {
@@ -66,6 +67,7 @@ export function TellerDashboardJsx() {
       setSearchResults([])
       setShowSuggestions(false)
     }
+    setHighlightedIndex(-1)
   }, [query, setSearchResults])
 
   const handleSearchChange = (e) => {
@@ -78,129 +80,159 @@ export function TellerDashboardJsx() {
   }
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      e.target.blur()
+    if (searchResults.length === 0) return
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      setHighlightedIndex((prevIndex) => 
+        (prevIndex + 1) % searchResults.length
+      )
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault()
+      setHighlightedIndex((prevIndex) => 
+        (prevIndex - 1 + searchResults.length) % searchResults.length
+      )
+    } else if (e.key === 'Enter') {
+      if (highlightedIndex !== -1) {
+        e.preventDefault()
+        const selectedItem = searchResults[highlightedIndex]
+        handleProcedureClick(selectedItem)
+      }
+      e.target.blur(); // Dismisses the keyboard
     }
   }
 
-  const handleProcedureClick = (procedure) => {
-    setLastView(currentView)
-    setCurrentProcedure(procedure.procedureNumber)
-    setCurrentView('procedure')
+  const handleProcedureClick = (item) => {
+    const procedureNumber = item.procedureNumber || item;
+    const procedure = procedureList.find(proc => proc.procedureNumber === procedureNumber);
+
+    if (!procedure) return;
+
+    setQuery('');
+    setLastView(currentView);
+    setCurrentProcedure(procedureNumber);
+    setCurrentView('procedure');
+
+    if (procedureNumber && 
+        (!recentVisitHistory.length || procedureNumber !== recentVisitHistory[recentVisitHistory.length - 1]?.procedureNumber)) {
+      
+      const updatedHistory = [...recentVisitHistory.map(proc => proc.procedureNumber), procedureNumber];
+      const limitedHistory = updatedHistory.length > 200 ? updatedHistory.slice(-200) : updatedHistory;
+
+      setRecentVisitHistory(limitedHistory);
+      localStorage.setItem('recentVisitHistory', JSON.stringify(limitedHistory));
+    }
   }
 
-  const recentProcedures = recentVisitHistory.slice(-10).reverse()
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-indigo-100 text-slate-900">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-8 relative">
-          <div className={`relative transition-all duration-300 ${isFocused ? 'shadow-lg' : 'shadow'} rounded-lg`}>
-            <Search className={`absolute left-3 top-1/2 transform -translate-y-1/2 transition-colors duration-300 ${isFocused ? 'text-sky-600' : 'text-slate-400'}`} />
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-indigo-100 p-4 sm:p-6 md:p-8">
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-center mb-8 text-indigo-900">CSR Bible</h1>
+        
+        {/* Search Bar */}
+        <div className="relative mb-8">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-500 rounded-2xl blur-xl opacity-75"></div>
+          <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <Search className="h-6 w-6 text-indigo-500" />
+            </div>
             <Input
               type="search"
               placeholder="Search procedures..."
-              className="pl-10 pr-4 py-2 w-full border-2 border-transparent bg-white focus:border-sky-400 focus:outline-none rounded-lg transition-all duration-300"
+              className="block w-full pl-12 pr-12 py-6 border-none text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 text-xl"
               value={query}
               onChange={handleSearchChange}
               onKeyDown={handleKeyDown}
-              onFocus={() => setIsFocused(true)}
-              onBlur={() => setIsFocused(false)}
             />
             {query && (
-              <button
+              <Button
+                variant="ghost"
+                size="sm"
+                className="absolute top-1/2 right-0 pr-4 transform -translate-y-1/2 flex items-center"
                 onClick={handleClearInput}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
               >
-                <ChevronRight className="w-4 h-4" />
-              </button>
+                <X className="h-6 w-6 text-gray-500" />
+              </Button>
             )}
           </div>
-          {showSuggestions && searchResults.length > 0 && (
-            <Card 
-              ref={suggestionsRef}
-              className="absolute z-10 w-full mt-1 border-2 border-sky-200 shadow-lg"
-            >
-              <ScrollArea className="h-[300px]">
-                {searchResults.map((result, index) => (
-                  <div
-                    key={index}
-                    className="px-4 py-2 hover:bg-sky-50 cursor-pointer flex items-center"
-                    onClick={() => handleProcedureClick(result)}
-                  >
-                    <FileText className="w-5 h-5 mr-2" />
-                    <span>{result.procedureName}</span>
-                  </div>
-                ))}
-              </ScrollArea>
-            </Card>
-          )}
         </div>
 
-        <Tabs defaultValue="recent" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 bg-sky-100 rounded-lg p-1">
-            <TabsTrigger 
-              value="recent" 
-              className="rounded-md data-[state=active]:bg-white data-[state=active]:text-sky-700 data-[state=active]:shadow"
-            >
-              Recent Procedures
-            </TabsTrigger>
-            <TabsTrigger 
-              value="saved" 
-              className="rounded-md data-[state=active]:bg-white data-[state=active]:text-sky-700 data-[state=active]:shadow"
-            >
-              Saved Procedures
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent value="recent">
-            <Card className="border-2 border-sky-200">
-              <CardHeader className="bg-gradient-to-r from-sky-100 to-indigo-100">
-                <CardTitle className="flex items-center text-xl text-sky-800">
-                  <Clock className="mr-2 text-sky-600" />
-                  Recent Procedures
-                </CardTitle>
-                {/* <CardDescription className="text-slate-600">Recently viewed or used procedures</CardDescription> */}
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {recentProcedures.map((procedure, index) => (
-                    <li key={index} className="flex items-center justify-between p-2 hover:bg-sky-50 rounded transition-colors cursor-pointer" onClick={() => handleProcedureClick(procedure)}>
-                      <div className="flex items-center">
-                        <div className="text-sky-600">{procedure.icon || <FileText className="w-5 h-5" />}</div>
-                        <span className="ml-2 text-sm sm:text-base">{procedure.procedureName}</span>
-                      </div>
-                      <ChevronRight className="text-sky-400" />
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </TabsContent>
-          <TabsContent value="saved">
-            <Card className="border-2 border-indigo-200">
-              <CardHeader className="bg-gradient-to-r from-indigo-100 to-sky-100">
-                <CardTitle className="flex items-center text-xl text-indigo-800">
-                  <Bookmark className="mr-2 text-indigo-600" />
-                  Saved Procedures
-                </CardTitle>
-                {/* <CardDescription className="text-slate-600">Your bookmarked procedures</CardDescription> */}
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {savedProceduresWithDetails.map((procedure, index) => (
-                    <li key={index} className="flex items-center justify-between p-2 hover:bg-indigo-50 rounded transition-colors cursor-pointer" onClick={() => handleProcedureClick(procedure)}>
-                      <div className="flex items-center">
-                        <div className="text-indigo-600"><FileText className="w-5 h-5" /></div>
-                        <span className="ml-2 text-sm sm:text-base">{procedure.procedureName}</span>
-                      </div>
-                      <ChevronRight className="text-indigo-400" />
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </TabsContent>
-        </Tabs>
+        {/* Search Results */}
+        {query !== '' && (
+          <div className="bg-white rounded-xl shadow-lg mb-8 overflow-hidden" ref={suggestionsRef}>
+            <ScrollArea className="h-[500px]">
+              {searchResults.length > 0 ? (
+                searchResults.map((result, index) => (
+                  <div
+                    key={index}
+                    className={`flex items-center p-4 hover:bg-indigo-50 cursor-pointer border-b border-gray-100 transition-colors duration-150 ease-in-out ${highlightedIndex === index ? 'bg-indigo-50' : ''}`}
+                    onClick={() => handleProcedureClick(result)}
+                  >
+                    <div className="text-indigo-600 mr-4"><FileText className="w-5 h-5" /></div>
+                    <span className="text-lg text-gray-800">{result.procedureName}</span>
+                    <ChevronRight className="ml-auto text-gray-400" />
+                  </div>
+                ))
+              ) : (
+                <div className="text-center p-4">
+                  <p className="text-gray-600">No procedures found.</p>
+                </div>
+              )}
+            </ScrollArea>
+          </div>
+        )}
+
+        {/* Recent and Saved Procedures */}
+        {!query && (
+          <Tabs defaultValue="recent" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 mb-4 p-1 bg-white rounded-lg shadow-md">
+              <TabsTrigger 
+                value="recent" 
+                className="rounded-md data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-500 data-[state=active]:to-indigo-600 data-[state=active]:text-white text-gray-700 transition-all duration-200"
+              >
+                <Clock className="w-4 h-4 mr-2" />
+                Recent
+              </TabsTrigger>
+              <TabsTrigger 
+                value="saved" 
+                className="rounded-md data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-500 data-[state=active]:to-purple-600 data-[state=active]:text-white text-gray-700 transition-all duration-200"
+              >
+                <Bookmark className="w-4 h-4 mr-2" />
+                Saved
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="recent">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                {recentVisitHistory.slice(-10).reverse().map((procedure, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center p-4 hover:bg-indigo-50 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors duration-150 ease-in-out"
+                    onClick={() => handleProcedureClick(procedure)}
+                  >
+                    <div className="text-indigo-600 mr-4"><FileText className="w-5 h-5" /></div>
+                    <span className="text-lg text-gray-800">{procedure.procedureName}</span>
+                    <ChevronRight className="ml-auto text-gray-400" />
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="saved">
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                {savedProceduresWithDetails.slice().reverse().map((procedure, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center p-4 hover:bg-indigo-50 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors duration-150 ease-in-out"
+                    onClick={() => handleProcedureClick(procedure)}
+                  >
+                    <div className="text-indigo-600 mr-4"><FileText className="w-5 h-5" /></div>
+                    <span className="text-lg text-gray-800">{procedure.procedureName}</span>
+                    <ChevronRight className="ml-auto text-gray-400" />
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+        )}
       </div>
     </div>
   )

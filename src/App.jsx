@@ -24,14 +24,12 @@ function App() {
   
 
   return (
-    <div className='max-w-[1100px]'>
+    <div className=''>
       <div className='Main-View'>
         {currentView === 'home' ? <HomeView /> : 
         currentView === 'procedure' ? <ProcedureView /> : 
         currentView === 'search' ? <SearchView /> : null}
       </div>
-      <BottomNavigationBar/>
-      <TellerDashboardJsx /> 
     </div>
   );
 }
