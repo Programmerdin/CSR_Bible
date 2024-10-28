@@ -1,7 +1,8 @@
-// create a basic component
 import React from 'react';
-
-import '../TransactionProcedures.css';
+import { ScrollAreaNoBar } from "@/components/ui/scroll-area"
+import { Separator } from "@/components/ui/separator"
+import BackButton from '../../components/BackButton';
+import SaveProcedureButton from '../../components/SaveProcedureButton';
 import i1 from './0001-1.png'
 import i2 from './0001-2.png'
 import i3 from './0001-3.png'
@@ -12,57 +13,115 @@ import i7 from './0001-7.png'
 import i8 from './0001-8.png'
 import i9 from './0001-9.png'
 
-
 function Procedure0001() {
   return (
-    <div className='procedure-container'>
-      <p className='procedure-title'>Bank Draft in CAD</p>
-      <p className='procedure-big-text'>COINS 12 - 1 - 1</p>
-      <img className='procedure-image' src={i1} />
-      <p className='procedure-small-text'>PAY TO THE ORDER OF: Name of Beneficiary</p>
-      <p className='procedure-small-text'>AMT. : Type in amount in CAD</p>
-      <p className='procedure-small-text'>NAME OF REMITTER: Copy & Paste client's name from CBFE</p>
-      <p className='procedure-small-text'>SOURCE OF FUNDS: 1</p>
-      <p className='procedure-small-text'>TR/ACCT: Type in client's CAD account info</p>
-      <p className='procedure-small-text'>Press ENTER</p>
-      <div className='gap'></div>
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-indigo-100 px-4 relative">
+      <div className="max-w-4xl mx-auto">
+        <div className="fixed top-2 left-2 z-10">
+          <BackButton />
+        </div>
+        <div className="fixed top-2 right-2 z-10">
+          <SaveProcedureButton />
+        </div>
+        <ScrollAreaNoBar className="h-[calc(100vh)] hideScrollbar">
+          <h1 className="text-4xl font-bold text-indigo-900 mb-8 mt-12 text-center">Bank Draft in CAD</h1>
 
-      <img className='procedure-image' src={i2} />
-      <p className='procedure-small-text'>Press ENTER</p>
-      <div className='gap'></div>
+          
 
-      <img className='procedure-image' src={i3} />
-      <p className='procedure-small-text'>Press F1</p>
-      <div className='gap'></div>
+          <div className="space-y-12">
+            <section>
+              <h2 className="text-2xl font-semibold text-indigo-800 mb-4">COINS 12 - 1 - 1</h2>
+              <div className="space-y-6">
+                <div className="text-lg text-indigo-700">
+                  <img src={i1} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                  <ul className="space-y-2">
+                    <li>PAY TO THE ORDER OF: Name of Beneficiary</li>
+                    <li>AMT. : Type in amount in CAD</li>
+                    <li>NAME OF REMITTER: Copy & Paste client's name from CBFE</li>
+                    <li>SOURCE OF FUNDS: 1</li>
+                    <li>TR/ACCT: Type in client's CAD account info</li>
+                    <li>Press ENTER</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
 
-      <img className='procedure-image' src={i4} />
-      <p className='procedure-small-text'>Get Override</p>
-      <div className='gap'></div>
+            <Separator className="bg-indigo-200" />
 
-      <img className='procedure-image' src={i5} />
-      <p className='procedure-small-text'>Choose the printer for Drafts</p>
-      <div className='gap'></div>
+            <section>
+              <h2 className="text-2xl font-semibold text-indigo-800 mb-4">Processing Steps</h2>
+              <div className="space-y-6">
+                <div className="text-lg text-indigo-700">
+                  <img src={i2} alt="Processing Step 1" className="rounded-lg object-cover w-full shadow-lg mb-2" />
+                  <p className="mt-2">Press ENTER</p>
+                </div>
 
-      <img className='procedure-image' src={i6} />
-      <p className='procedure-small-text'>Press F1 or ENTER to print Debit Slip</p>
-      <p className='procedure-small-text'>Insert Double Debit Slip into the printer (below image)</p>
-      <img className='procedure-image' src={i8} />
-      <div className='gap'></div>
+                <div className="text-lg text-indigo-700">
+                  <img src={i3} alt="Processing Step 2" className="rounded-lg object-cover w-full shadow-lg mb-2" />
+                  <p className="mt-2">Press F1</p>
+                </div>
 
-      <img className='procedure-image' src={i7} />
-      <img className='procedure-image' src={i9} />
-      <p className='procedure-small-text'>Get Client's signature on Draft and Debit slip</p>
-      <div className='gap'></div>
+                <div className="text-lg text-indigo-700">
+                  <img src={i4} alt="Processing Step 3" className="rounded-lg object-cover w-full shadow-lg mb-2" />
+                  <p className="mt-2">Get Override</p>
+                </div>
 
-      <p className='procedure-small-text'>Tear off Printed Draft paper into 3 separate pieces</p>
-      <p className='procedure-small-text'>Top: Actual Bank Draft</p>
-      <p className='procedure-small-text'>Middle: Client Copy</p>
-      <p className='procedure-small-text'>Bottom: Branch Copy</p>
-      <div className='gap'></div>
+                <div className="text-lg text-indigo-700">
+                  <img src={i5} alt="Processing Step 4" className="rounded-lg object-cover w-full shadow-lg mb-2" />
+                  <p className="mt-2">Choose the printer for Drafts</p>
+                </div>
+              </div>
+            </section>
 
-      <p className='procedure-small-text'>Tear off Printed Debit Slip into 2 pieces</p>
-      <p className='procedure-small-text'>Staple together one of the debit slip with Client Copy of Draft</p>
-      <p className='procedure-small-text'>Staple together the other piece of debit slip with Branch Copy of Draft</p>
+            <Separator className="bg-indigo-200" />
+
+            <section>
+              <h2 className="text-2xl font-semibold text-indigo-800 mb-4">Printing Debit Slip and Signatures</h2>
+              <div className="space-y-6">
+                <div className="text-lg text-indigo-700">
+                  <img src={i6} alt="Printing Step 1" className="rounded-lg object-cover w-full shadow-lg mb-2" />
+                  <p className="mt-2">Press F1 or ENTER to print Debit Slip</p>
+                  <p className="mt-2">Insert Double Debit Slip into the printer (shown below)</p>
+                  <img src={i8} alt="Debit Slip" className="rounded-lg object-cover w-full shadow-lg mt-4" />
+                </div>
+
+                <div className="text-lg text-indigo-700">
+                  <img src={i7} alt="Final Document 1" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                  <img src={i9} alt="Final Document 2" className="rounded-lg object-cover w-full shadow-lg mb-2" />
+                  <p className="mt-2">Get Client's signature on Draft and Debit slip</p>
+                </div>
+              </div>
+            </section>
+
+            <Separator className="bg-indigo-200" />
+
+            <section>
+              <h2 className="text-2xl font-semibold text-indigo-800 mb-4">Final Steps</h2>
+              <div className="space-y-6">
+                <div className="text-lg text-indigo-700">
+                  <h3 className="font-semibold mb-2">Draft Paper Separation:</h3>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li>Tear off Printed Draft paper into 3 separate pieces:</li>
+                    <li className="ml-6">Top: Actual Bank Draft</li>
+                    <li className="ml-6">Middle: Client Copy</li>
+                    <li className="ml-6">Bottom: Branch Copy</li>
+                  </ul>
+                </div>
+
+                <div className="text-lg text-indigo-700">
+                  <h3 className="font-semibold mb-2">Debit Slip Handling:</h3>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li>Tear off Printed Debit Slip into 2 pieces</li>
+                    <li>Staple together one of the debit slip with Client Copy of Draft</li>
+                    <li>Staple together the other piece of debit slip with Branch Copy of Draft</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div className="h-48" /> {/* Spacing at bottom for scrolling */}
+        </ScrollAreaNoBar>
+      </div>
     </div>
   );
 }
