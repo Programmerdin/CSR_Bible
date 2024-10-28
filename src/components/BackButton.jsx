@@ -1,7 +1,8 @@
 import React from 'react';
 import { useAtom } from 'jotai';
 import { currentViewAtom, lastViewAtom } from '../atoms/viewAtom';
-import left_arrow from '../assets/icons/left_arrow.png';
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from 'lucide-react';
 
 const BackButton = () => {
   const [currentView, setCurrentView] = useAtom(currentViewAtom);
@@ -13,9 +14,14 @@ const BackButton = () => {
   };
 
   return (
-    <button onClick={onClick}>
-      <img src={left_arrow} className="w-8" />
-    </button>
+    <Button
+      variant="outline"
+      size="icon"
+      className="rounded-full bg-white/80 backdrop-blur-sm"
+      onClick={onClick}
+    >
+      <ArrowLeft className="h-4 w-4 text-indigo-600" />
+    </Button>
   );
 };
 

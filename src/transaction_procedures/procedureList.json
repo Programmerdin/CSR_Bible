@@ -108,5 +108,11 @@
     "procedureNumber":"0022",
     "procedureName": "How to Close (CSR)",  
     "tags"  :["closing", "close", "end", "session", "how to close"]
+  },
+  {
+    "procedureNumber":"0023",
+    "procedureName": "Test",  
+    "tags"  :["test"]
   }
+
 ]
