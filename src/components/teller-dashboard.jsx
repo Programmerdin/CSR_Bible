@@ -19,6 +19,7 @@ import { currentProcedureAtom, savedProceduresAtom } from '../atoms/procedureAto
 import procedureList from '../transaction_procedures/procedureList.json'
 import Fuse from 'fuse.js'
 import { queryAtom, searchResultsAtom } from '../atoms/searchAtom'
+import logo from '../assets/logos/logo_blue.png'
 
 export function TellerDashboardJsx() {
   const [query, setQuery] = useAtom(queryAtom)
@@ -127,7 +128,7 @@ export function TellerDashboardJsx() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-50 to-indigo-100 p-4 sm:p-6 md:p-8">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-indigo-900">CSR Bible</h1>
+        <img src={logo} alt="CSR Bible Logo" className="h-12 mx-auto mb-10 mt-2" />
         
         {/* Search Bar */}
         <div className="relative mb-8">

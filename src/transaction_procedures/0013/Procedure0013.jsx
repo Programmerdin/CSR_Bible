@@ -1,45 +1,75 @@
 import React from 'react';
-
-import '../TransactionProcedures.css';
+import { ScrollAreaNoBar } from "@/components/ui/scroll-area"
+import { Separator } from "@/components/ui/separator"
+import BackButton from '../../components/BackButton';
+import SaveProcedureButton from '../../components/SaveProcedureButton';
 import i1 from './0013-1.png'
 import i2 from './0013-2.png'
 import i3 from './0013-3.png'
 import i4 from './0013-4.png'
 import i5 from './0013-5.png'
 
-
-
 function Procedure0013() {
   return (
-    <div className='procedure-container'>
-      <p className='procedure-title'>Pay USD Visa with USD Cheque</p>
-      <p className='procedure-big-text'>CBFE</p>
-      <p className='procedure-small-text'>Function: Pay Credit Card</p>
-      <img className='procedure-image' src={i1} />
-      <div className='gap'></div>
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-indigo-100 px-4 relative">
+      <div className="max-w-4xl mx-auto">
+        <div className="fixed top-2 left-2 z-10">
+          <BackButton />
+        </div>
+        <div className="fixed top-2 right-2 z-10">
+          <SaveProcedureButton />
+        </div>
+        <ScrollAreaNoBar className="h-[calc(100vh)] hideScrollbar">
+          <h1 className="text-4xl font-bold text-indigo-900 mb-8 mt-12 text-center">Pay USD Visa with USD Cheque</h1>
 
-      <img className='procedure-image' src={i2} />
-      <p className='procedure-small-text'>Press Go</p>
-      <p className='procedure-small-text'>Type the USD amount in the amount field</p>
-      <div className='gap'></div>
+          <div className="space-y-12">
+            <section>
+              <h2 className="text-2xl font-semibold text-indigo-800 mb-4">CBFE</h2>
+              <div className="space-y-6">
+                <div className="text-lg text-indigo-700">
+                <p>Function: Pay Credit Card</p>
+                  <img src={i1} alt="Initial Step" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                </div>
 
-      <img className='procedure-image' src={i3} />
-      <p className='procedure-small-text'>Press Post</p>
-      <div className='gap'></div>
+                <div className="text-lg text-indigo-700">
+                  <img src={i2} alt="Amount Entry" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                  <ul className="space-y-2">
+                    <li>Press Go</li>
+                    <li>Type the USD amount in the amount field</li>
+                  </ul>
+                </div>
 
-      <p className='procedure-big-text'>COINS 11 - 2</p>
-      <img className='procedure-image' src={i4} />
-      <p className='procedure-small-text'>TR/ACCT...: 90002 / 0540307</p>
-      <p className='procedure-small-text'>COMMNETS..: Client's USD Credit Card Number</p>
-      <p className='procedure-small-text'>Once filled, Press F1</p>
-      <div className='gap'></div>
+                <div className="text-lg text-indigo-700">
+                  <img src={i3} alt="Post Transaction" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                  <p>Press Post</p>
+                </div>
+              </div>
+            </section>
 
-      <img className='procedure-image' src={i5} />
-      <p className='procedure-small-text'>Press F6 and insert A4 paper into printer</p>
+            <Separator className="bg-indigo-200" />
 
-      <div className='gap'></div>
+            <section>
+              <h2 className="text-2xl font-semibold text-indigo-800 mb-4">COINS 11 - 2</h2>
+              <div className="space-y-6">
+                <div className="text-lg text-indigo-700">
+                  <img src={i4} alt="COINS Details" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                  <ul className="space-y-2">
+                    <li>TR/ACCT...: 90002 / 0540307</li>
+                    <li>COMMENTS..: Client's USD Credit Card Number</li>
+                    <li>Once filled, Press F1</li>
+                  </ul>
+                </div>
 
-
+                <div className="text-lg text-indigo-700">
+                  <img src={i5} alt="Final Step" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                  <p>Press F6 and insert paper into printer</p>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div className="h-48" />
+        </ScrollAreaNoBar>
+      </div>
     </div>
   );
 }
