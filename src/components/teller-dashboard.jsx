@@ -161,7 +161,7 @@ export function TellerDashboardJsx() {
         {/* Search Results */}
         {query !== '' && (
           <div className="bg-white rounded-xl shadow-lg mb-8 overflow-hidden" ref={suggestionsRef}>
-            <ScrollArea className="h-[500px]">
+            <ScrollArea className="h-[calc(100vh-250px)]">
               {searchResults.length > 0 ? (
                 searchResults.map((result, index) => (
                   <div
@@ -204,32 +204,36 @@ export function TellerDashboardJsx() {
             </TabsList>
             <TabsContent value="recent">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                {recentVisitHistory.slice(-10).reverse().map((procedure, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-4 hover:bg-indigo-50 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors duration-150 ease-in-out"
-                    onClick={() => handleProcedureClick(procedure)}
-                  >
-                    <div className="text-indigo-600 mr-4"><FileText className="w-5 h-5" /></div>
-                    <span className="text-lg text-gray-800">{procedure.procedureName}</span>
-                    <ChevronRight className="ml-auto text-gray-400" />
-                  </div>
-                ))}
+                <ScrollArea className="h-[calc(100vh-300px)]">
+                  {recentVisitHistory.slice(-12).reverse().map((procedure, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center p-4 hover:bg-indigo-50 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors duration-150 ease-in-out"
+                      onClick={() => handleProcedureClick(procedure)}
+                    >
+                      <div className="text-indigo-600 mr-4"><FileText className="w-5 h-5" /></div>
+                      <span className="text-lg text-gray-800">{procedure.procedureName}</span>
+                      <ChevronRight className="ml-auto text-gray-400" />
+                    </div>
+                  ))}
+                </ScrollArea>
               </div>
             </TabsContent>
             <TabsContent value="saved">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                {savedProceduresWithDetails.slice().reverse().map((procedure, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-4 hover:bg-indigo-50 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors duration-150 ease-in-out"
-                    onClick={() => handleProcedureClick(procedure)}
-                  >
-                    <div className="text-indigo-600 mr-4"><FileText className="w-5 h-5" /></div>
-                    <span className="text-lg text-gray-800">{procedure.procedureName}</span>
-                    <ChevronRight className="ml-auto text-gray-400" />
-                  </div>
-                ))}
+                <ScrollArea className="h-[calc(100vh-300px)]">
+                  {savedProceduresWithDetails.slice().reverse().map((procedure, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center p-4 hover:bg-indigo-50 cursor-pointer border-b border-gray-100 last:border-b-0 transition-colors duration-150 ease-in-out"
+                      onClick={() => handleProcedureClick(procedure)}
+                    >
+                      <div className="text-indigo-600 mr-4"><FileText className="w-5 h-5" /></div>
+                      <span className="text-lg text-gray-800">{procedure.procedureName}</span>
+                      <ChevronRight className="ml-auto text-gray-400" />
+                    </div>
+                  ))}
+                </ScrollArea>
               </div>
             </TabsContent>
           </Tabs>
