@@ -91,7 +91,7 @@
   },
   {
     "procedureNumber":"0019",
-    "procedureName": "U Bill",  
+    "procedureName": "Pay U Bill from Account",  
     "tags"  :["ubill", "utility", "bill", "unregistered", "tax", "cra", "business", "u", "debit"]
   },
   {
@@ -111,8 +111,13 @@
   },
   {
     "procedureNumber":"0023",
-    "procedureName": "Test",  
-    "tags"  :["test"]
+    "procedureName": "Pay U Bill with Cheque/Instrument",  
+    "tags"  :["ubill", "utility", "bill", "unregistered", "tax", "cra", "business", "u", "debit", "cheque", "check"]
+  },
+  {
+    "procedureNumber":"0024",
+    "procedureName": "Print Void Cheque (aka Customer Account Information)",  
+    "tags"  :["void", "cheque", "account","preauth", "preauthorized", "debit", "pay cheque", "pay check"]
   }
 
 ]
