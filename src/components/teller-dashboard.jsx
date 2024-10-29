@@ -204,7 +204,7 @@ export function TellerDashboardJsx() {
             </TabsList>
             <TabsContent value="recent">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <ScrollArea className="h-[calc(100vh-300px)]">
+                <ScrollArea className="h-[calc(100vh-350px)]">
                   {recentVisitHistory.slice(-12).reverse().map((procedure, index) => (
                     <div
                       key={index}
@@ -221,7 +221,7 @@ export function TellerDashboardJsx() {
             </TabsContent>
             <TabsContent value="saved">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <ScrollArea className="h-[calc(100vh-300px)]">
+                <ScrollArea className="h-[calc(100vh-350px)]">
                   {savedProceduresWithDetails.slice().reverse().map((procedure, index) => (
                     <div
                       key={index}
