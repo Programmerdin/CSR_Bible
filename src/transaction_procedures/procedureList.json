@@ -91,7 +91,7 @@
   },
   {
     "procedureNumber":"0019",
-    "procedureName": "Pay U Bill from Account",  
+    "procedureName": "Pay U Bill",  
     "tags"  :["ubill", "utility", "bill", "unregistered", "tax", "cra", "business", "u", "debit"]
   },
   {
