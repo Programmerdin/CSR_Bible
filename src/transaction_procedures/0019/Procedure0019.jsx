@@ -33,7 +33,7 @@ function Procedure0019() {
         </div>
         
         <ScrollAreaNoBar className="h-[calc(100vh-32px)]">
-          <div className="pl-20 pr-4">
+          <div className="px-4">
             <h1 className="text-4xl font-bold text-indigo-900 mb-4 mt-16 text-center">Pay Unregistered Bill (aka U Bill)</h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
@@ -57,7 +57,7 @@ function Procedure0019() {
             {selectedOption === "account" ? (
               <div className="space-y-12">
                 <section>
-                  <h2 className="text-2xl font-semibold text-indigo-800 mb-4">Initial Check</h2>
+                  <h2 className="text-2xl font-semibold text-indigo-800 mb-4">Locate the amount to pay</h2>
                   <div className="space-y-6">
                     <div className="text-lg text-indigo-700">
                       <p className="mb-2">Locate the amount to pay</p>
