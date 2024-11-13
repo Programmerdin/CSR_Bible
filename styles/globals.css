@@ -1,0 +1,57 @@
+/* Add these global styles */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+[role="option"],
+[role="listbox"],
+.select-content,
+.select-item {
+  outline: none !important;
+  transition: none !important;
+}
+
+[role="option"]:focus,
+[role="listbox"]:focus,
+.select-content:focus,
+.select-item:focus {
+  outline: none !important;
+  transition: none !important;
+}
+
+/* Target Radix UI Select components specifically */
+*[data-radix-select-viewport],
+*[role="option"],
+*[role="listbox"],
+*[data-radix-select-content],
+*[data-radix-select-item],
+*[data-radix-select-item-indicator],
+*[data-radix-select-trigger] {
+  outline: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+*[data-radix-select-viewport]:focus,
+*[role="option"]:focus,
+*[role="listbox"]:focus,
+*[data-radix-select-content]:focus,
+*[data-radix-select-item]:focus,
+*[data-radix-select-item-indicator]:focus,
+*[data-radix-select-trigger]:focus {
+  outline: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Remove all transitions */
+*[data-radix-select-viewport],
+*[role="option"],
+*[role="listbox"],
+*[data-radix-select-content],
+*[data-radix-select-item],
+*[data-radix-select-item-indicator],
+*[data-radix-select-trigger] {
+  transition: none !important;
+}
