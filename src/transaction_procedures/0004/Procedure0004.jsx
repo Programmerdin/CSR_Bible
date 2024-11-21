@@ -6,13 +6,22 @@ import { Card, CardContent } from "@/components/ui/card"
 import { DollarSign, Globe, ArrowRight } from 'lucide-react'
 import BackButton from '../../components/BackButton';
 import SaveProcedureButton from '../../components/SaveProcedureButton';
-import i1 from './0004-1.png'
-import i2 from './0004-2.png'
-import i3 from './0004-3.png'
-import i4 from './0004-4.png'
-import i5 from './0004-5.png'
-import i6 from './0004-6.png'
-import i7 from './0004-7.png'
+import Procedure0004CommonStepsMiddle1 from './Procedure004CommonStepsMiddle1';
+import Procedure0004CommonStepsEnd from './Procedure0004CommonStepsEnd';
+import i1cadcadcanada from './cad-cad-canada/0004-cad-cad-canada-1.png'
+import i5cadcadcanada from './cad-cad-canada/0004-cad-cad-canada-5.png'
+import i6cadcadcanada from './cad-cad-canada/0004-cad-cad-canada-6.png'
+import i7cadcadcanada from './cad-cad-canada/0004-cad-cad-canada-7.png'
+import i1cadcadrow from './cad-cad-row/0004-cad-cad-row-1.png'
+import i2cadcadrow from './cad-cad-row/0004-cad-cad-row-2.png'
+import i1cadusdcanada from './cad-usd-canada/0004-cad-usd-canada-1.png'
+import i2cadusdcanada from './cad-usd-canada/0004-cad-usd-canada-2.png'
+import i3cadusdcanada from './cad-usd-canada/0004-cad-usd-canada-3.png'
+import i4cadusdcanada from './cad-usd-canada/0004-cad-usd-canada-4.png'
+import i1cadusdrow from './cad-usd-row/0004-cad-usd-row-1.png'
+import i1cadothercanada from './cad-other-canada/0004-cad-other-canada-1.png'
+import i1cadotherrow from './cad-other-row/0004-cad-other-row-1.png'
+
 
 function Procedure0004() {
   const [accountCurrency, setAccountCurrency] = useState("")
@@ -114,6 +123,10 @@ function Procedure0004() {
             </CardContent>
           </Card>
 
+          <h2 className="text-2xl font-semibold text-indigo-800 mb-4">COINS 12 - 2 - 1</h2>
+          <Separator className="bg-indigo-200" />
+
+          
           {accountCurrency && wireCurrency && destinationCountry && (
             <div className="space-y-12">
               {/* CAD Account */}
@@ -124,7 +137,12 @@ function Procedure0004() {
                     <section>
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">CAD Account to CAD Wire - Canada</h2>
                       <div className="space-y-6">
-                        {/* Content for CAD Account -> CAD Wire -> Canada */}
+                        <img src={i1cadcadcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsMiddle1 />
+                        <img src={i5cadcadcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i6cadcadcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i7cadcadcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsEnd />
                       </div>
                     </section>
                   )}
@@ -134,7 +152,11 @@ function Procedure0004() {
                     <section>
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">CAD Account to CAD Wire - International</h2>
                       <div className="space-y-6">
-                        {/* Content for CAD Account -> CAD Wire -> International */}
+                      <img src={i2cadcadrow} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsMiddle1 />
+                        <img src={i5cadcadcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i1cadcadrow} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsEnd />
                       </div>
                     </section>
                   )}
@@ -144,7 +166,12 @@ function Procedure0004() {
                     <section>
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">CAD Account to USD Wire - Canada</h2>
                       <div className="space-y-6">
-                        {/* Content for CAD Account -> USD Wire -> Canada */}
+                        <img src={i1cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsMiddle1 />
+                        <img src={i2cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i3cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i4cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsEnd />
                       </div>
                     </section>
                   )}
@@ -154,7 +181,11 @@ function Procedure0004() {
                     <section>
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">CAD Account to USD Wire - International</h2>
                       <div className="space-y-6">
-                        {/* Content for CAD Account -> USD Wire -> International */}
+                        <img src={i1cadusdrow} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsMiddle1 />
+                        <img src={i2cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i1cadcadrow} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsEnd />
                       </div>
                     </section>
                   )}
@@ -164,7 +195,12 @@ function Procedure0004() {
                     <section>
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">CAD Account to Other Currency Wire - Canada</h2>
                       <div className="space-y-6">
-                        {/* Content for CAD Account -> Other Currency Wire -> Canada */}
+                        <img src={i1cadothercanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsMiddle1 />
+                        <img src={i2cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i3cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i4cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsEnd />
                       </div>
                     </section>
                   )}
@@ -174,7 +210,11 @@ function Procedure0004() {
                     <section>
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">CAD Account to Other Currency Wire - International</h2>
                       <div className="space-y-6">
-                        {/* Content for CAD Account -> Other Currency Wire -> International */}
+                        <img src={i1cadotherrow} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsMiddle1 />
+                        <img src={i2cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i1cadcadrow} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsEnd />
                       </div>
                     </section>
                   )}
@@ -190,6 +230,7 @@ function Procedure0004() {
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">USD Account to CAD Wire - Canada</h2>
                       <div className="space-y-6">
                         {/* Content for USD Account -> CAD Wire -> Canada */}
+                        <p className="text-2xl text-indigo-700 mb-2">This procedure has not been prepared yet</p>
                       </div>
                     </section>
                   )}
@@ -200,6 +241,7 @@ function Procedure0004() {
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">USD Account to CAD Wire - International</h2>
                       <div className="space-y-6">
                         {/* Content for USD Account -> CAD Wire -> International */}
+                        <p className="text-2xl text-indigo-700 mb-2">This procedure has not been prepared yet</p>
                       </div>
                     </section>
                   )}
@@ -210,6 +252,7 @@ function Procedure0004() {
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">Send USD from USD Account within Canada</h2>
                       <div className="space-y-6">
                         {/* Content for USD Account -> USD Wire -> Canada */}
+                        <p className="text-2xl text-indigo-700 mb-2">This procedure has not been prepared yet</p>
                       </div>
                     </section>
                   )}
@@ -220,6 +263,8 @@ function Procedure0004() {
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">USD Account to USD Wire - International</h2>
                       <div className="space-y-6">
                         {/* Content for USD Account -> USD Wire -> International */}
+                        <p className="text-2xl text-indigo-700 mb-2">This procedure has not been prepared yet</p>
+
                       </div>
                     </section>
                   )}
@@ -230,6 +275,7 @@ function Procedure0004() {
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">USD Account to Other Currency Wire - Canada</h2>
                       <div className="space-y-6">
                         {/* Content for USD Account -> Other Currency Wire -> Canada */}
+                        <p className="text-2xl text-indigo-700 mb-2">This procedure has not been prepared yet</p>
                       </div>
                     </section>
                   )}
@@ -240,6 +286,7 @@ function Procedure0004() {
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">USD Account to Other Currency Wire - International</h2>
                       <div className="space-y-6">
                         {/* Content for USD Account -> Other Currency Wire -> International */}
+                        <p className="text-2xl text-indigo-700 mb-2">This procedure has not been prepared yet</p>
                       </div>
                     </section>
                   )}
