@@ -61,7 +61,7 @@
   },
   {
     "procedureNumber":"0013",
-    "procedureName": "Pay USD Visa with USD Cheque", 
+    "procedureName": "Pay USD Visa", 
     "tags"  :["USD", "Visa", "Cheque", "Payment", "credit card", "bill", "usdvisa", "instrument"] 
   },
   {
