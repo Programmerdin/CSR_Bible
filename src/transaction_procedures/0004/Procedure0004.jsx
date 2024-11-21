@@ -22,6 +22,8 @@ import i1cadusdrow from './cad-usd-row/0004-cad-usd-row-1.png'
 import i1cadothercanada from './cad-other-canada/0004-cad-other-canada-1.png'
 import i1cadotherrow from './cad-other-row/0004-cad-other-row-1.png'
 
+import i1usdusdcanada from './usd-usd-canada/0004-usd-usd-canada-1.png'
+import i1usdusdrow from './usd-usd-row/0004-usd-usd-row-1.png'
 
 function Procedure0004() {
   const [accountCurrency, setAccountCurrency] = useState("")
@@ -251,8 +253,12 @@ function Procedure0004() {
                     <section>
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">Send USD from USD Account within Canada</h2>
                       <div className="space-y-6">
-                        {/* Content for USD Account -> USD Wire -> Canada */}
-                        <p className="text-2xl text-indigo-700 mb-2">This procedure has not been prepared yet</p>
+                        <img src={i1usdusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsMiddle1 />
+                        <img src={i5cadcadcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i6cadcadcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i7cadcadcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsEnd />
                       </div>
                     </section>
                   )}
@@ -262,9 +268,11 @@ function Procedure0004() {
                     <section>
                       <h2 className="text-2xl font-semibold text-indigo-800 mb-4">USD Account to USD Wire - International</h2>
                       <div className="space-y-6">
-                        {/* Content for USD Account -> USD Wire -> International */}
-                        <p className="text-2xl text-indigo-700 mb-2">This procedure has not been prepared yet</p>
-
+                        <img src={i1usdusdrow} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsMiddle1 />
+                        <img src={i2cadusdcanada} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <img src={i1cadcadrow} className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                        <Procedure0004CommonStepsEnd />
                       </div>
                     </section>
                   )}
