@@ -29,6 +29,12 @@ const SearchResults = () => {
         .filter(proc => proc !== null); // Filter out any nulls
 
       setRecentVisitHistory(filteredHistory);
+    } else {
+      // For first-time visitors, show default procedures
+      const defaultProcedures = ['0004', '0013', '0022']
+        .map(procNum => procedureList.find(proc => proc.procedureNumber === procNum))
+        .filter(proc => proc !== null);
+      setRecentVisitHistory(defaultProcedures);
     }
   }, [setRecentVisitHistory, procedureList]);
 

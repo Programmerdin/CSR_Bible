@@ -85,11 +85,6 @@
     "tags"  :["SDB", "old", "contract", "safety", "deposit", "box", "cancel"]
   },
   {
-    "procedureNumber":"0018",
-    "procedureName": "Pay USD Visa with USD Account",  
-    "tags"  :["USD", "visa", "credit card", "account", "payment", "bill", "pay", "foreign", "currency"]
-  },
-  {
     "procedureNumber":"0019",
     "procedureName": "Pay U Bill",  
     "tags"  :["ubill", "utility", "bill", "unregistered", "tax", "cra", "business", "u", "debit"]
@@ -110,14 +105,8 @@
     "tags"  :["closing", "close", "end", "session", "how to close"]
   },
   {
-    "procedureNumber":"0023",
-    "procedureName": "Pay U Bill with Cheque/Instrument",  
-    "tags"  :["ubill", "utility", "bill", "unregistered", "tax", "cra", "business", "u", "debit", "cheque", "check"]
-  },
-  {
     "procedureNumber":"0024",
     "procedureName": "Print Void Cheque (aka Customer Account Information)",  
     "tags"  :["void", "cheque", "account","preauth", "preauthorized", "debit", "pay cheque", "pay check"]
   }
-
 ]

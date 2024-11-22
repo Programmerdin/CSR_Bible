@@ -15,12 +15,10 @@ import Procedure0014 from "../transaction_procedures/0014/Procedure0014";
 import Procedure0015 from "../transaction_procedures/0015/Procedure0015";
 import Procedure0016 from "../transaction_procedures/0016/Procedure0016";
 import Procedure0017 from "../transaction_procedures/0017/Procedure0017";
-import Procedure0018 from "../transaction_procedures/0018/Procedure0018";
 import Procedure0019 from "../transaction_procedures/0019/Procedure0019";
 import Procedure0020 from "../transaction_procedures/0020/Procedure0020";
 import Procedure0021 from "../transaction_procedures/0021/Procedure0021";
 import Procedure0022 from "../transaction_procedures/0022/Procedure0022";
-import Procedure0023 from "../transaction_procedures/0023/Procedure0023";
 import Procedure0024 from "../transaction_procedures/0024/Procedure0024";
 
 const TransactionProcedureMap = {
@@ -41,14 +39,11 @@ const TransactionProcedureMap = {
   15: Procedure0015,
   16: Procedure0016,
   17: Procedure0017,
-  18: Procedure0018,
   19: Procedure0019,
   20: Procedure0020,
   21: Procedure0021,
   22: Procedure0022,
-  23: Procedure0023,
   24: Procedure0024,
 };
 
 export default TransactionProcedureMap;
-
