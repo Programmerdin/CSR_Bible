@@ -56,8 +56,8 @@
   },
   {
     "procedureNumber":"0012",
-    "procedureName": "Close Account (Chequing, Saving, USD Accounts)", 
-    "tags"  :["close", "account", "closing", "cancel"]
+    "procedureName": "Close Account", 
+    "tags"  :["closing", "cancel", "delete", "plc", "chequing", "saving", "usd", "line of credit"]
   },
   {
     "procedureNumber":"0013",
