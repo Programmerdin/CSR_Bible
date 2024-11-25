@@ -113,5 +113,10 @@
     "procedureNumber":"0025",
     "procedureName": "Pay Class Loan",  
     "tags"  :["borrowing", "debt", "payment"]
+  },
+  {
+    "procedureNumber":"0026",
+    "procedureName": "Reset PIN (Debit & Credit Card)",  
+    "tags"  :["reset", "forgot", "set", "new", "delete"]
   }
 ]
