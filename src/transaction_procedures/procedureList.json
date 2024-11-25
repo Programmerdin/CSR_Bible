@@ -108,5 +108,10 @@
     "procedureNumber":"0024",
     "procedureName": "Print Void Cheque (aka Customer Account Information)",  
     "tags"  :["void", "cheque", "account","preauth", "preauthorized", "debit", "pay cheque", "pay check"]
+  },
+  {
+    "procedureNumber":"0025",
+    "procedureName": "Pay Class Loan",  
+    "tags"  :["borrowing", "debt", "payment"]
   }
 ]
