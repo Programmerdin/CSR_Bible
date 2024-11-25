@@ -66,9 +66,6 @@ function Procedure0025() {
             </section>
 
 
-
-
-
             {selectedOption === "cash" && (
               <>
                 <section>
