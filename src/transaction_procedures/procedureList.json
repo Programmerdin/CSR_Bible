@@ -117,6 +117,11 @@
   {
     "procedureNumber":"0026",
     "procedureName": "Reset PIN (Debit & Credit Card)",  
-    "tags"  :["reset", "forgot", "set", "new", "delete"]
+    "tags"  :["reset", "forgot", "set", "new"]
+  },
+  {
+    "procedureNumber":"0027",
+    "procedureName": "Issue/Replace Debit Card",
+    "tags"  :["lost", "new", "bank", "replacement", "keep", "same", "number", "old"]
   }
 ]
