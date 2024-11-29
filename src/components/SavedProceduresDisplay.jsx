@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAtom } from 'jotai';
-import { currentViewAtom, lastViewAtom } from '../atoms/viewAtom';
 import { currentProcedureAtom, savedProceduresAtom } from '../atoms/procedureAtom';
 import procedureList from '../transaction_procedures/procedureList.json';
 import threeLinesIcon from '../assets/icons/threeLines.png';
 
 const SavedProceduresDisplay = () => {
-  const [currentView, setCurrentView] = useAtom(currentViewAtom);
-  const [lastView, setLastView] = useAtom(lastViewAtom);
+  const navigate = useNavigate();
   const [currentProcedure, setCurrentProcedure] = useAtom(currentProcedureAtom);
   const [savedProcedures, setSavedProcedures] = useAtom(savedProceduresAtom);
   const [savedProceduresWithDetails, setSavedProceduresWithDetails] = useState([]);
@@ -17,13 +16,11 @@ const SavedProceduresDisplay = () => {
       .map(procNum => procedureList.find(proc => proc.procedureNumber === procNum) || null)
       .filter(proc => proc !== null);
     setSavedProceduresWithDetails(temp);
-  }, [savedProcedures]); // Add savedProcedures as a dependency
+  }, [savedProcedures]);
 
-  // Properly define the function here using const
   const handleSavedProceduresClick = (procedureNumber) => {
     setCurrentProcedure(procedureNumber);
-    setCurrentView('procedure');
-    setLastView('home');
+    navigate(`/procedure/${procedureNumber}`);
   };
 
   return (
@@ -46,4 +43,3 @@ const SavedProceduresDisplay = () => {
 };
 
 export default SavedProceduresDisplay;
-
