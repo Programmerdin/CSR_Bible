@@ -117,7 +117,7 @@
   {
     "procedureNumber":"0026",
     "procedureName": "Reset PIN (Debit & Credit Card)",  
-    "tags"  :["reset", "forgot", "set", "new"]
+    "tags"  :["reset", "forgot", "set", "new", "password", "code"]
   },
   {
     "procedureNumber":"0027",

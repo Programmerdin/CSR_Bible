@@ -125,7 +125,7 @@ function Procedure0004() {
             </CardContent>
           </Card>
 
-          <h2 className="text-2xl font-semibold text-indigo-800 mb-4">COINS 12 - 2 - 1</h2>
+          <h2 className="text-2xl font-semibold text-indigo-800 mb-4">COINS 11 - 12 - 1</h2>
           <Separator className="bg-indigo-200" />
 
           
