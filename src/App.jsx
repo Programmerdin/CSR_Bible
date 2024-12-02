@@ -16,11 +16,12 @@ function App() {
       setSavedProcedures(parsedSavedProcedures);
     }
   }, []);
-  
+
   return (
     <div className=''>
       <Routes>
         <Route path="/" element={<SearchView />} />
+        <Route path="/procedure/:procedureId/:procedureName" element={<ProcedureView />} />
         <Route path="/procedure/:procedureId" element={<ProcedureView />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

@@ -39,20 +39,22 @@ const SearchResults = () => {
 
     if (!procedure) return;
 
-    setQuery('');
     setCurrentProcedure(procedureNumber);
 
-    if (procedureNumber && 
-        (!recentVisitHistory.length || procedureNumber !== recentVisitHistory[recentVisitHistory.length - 1]?.procedureNumber)) {
-      
-      const updatedHistory = [...recentVisitHistory.map(proc => proc.procedureNumber), procedureNumber];
-      const limitedHistory = updatedHistory.length > 200 ? updatedHistory.slice(-200) : updatedHistory;
+    // Format procedure name for URL
+    const formattedName = procedure.procedureName
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_+|_+$/g, '');
 
-      setRecentVisitHistory(limitedHistory);
-      localStorage.setItem('recentVisitHistory', JSON.stringify(limitedHistory));
+    // Update history
+    if (item.procedureNumber) {
+      const updatedHistory = [procedure, ...recentVisitHistory.filter(proc => proc.procedureNumber !== procedure.procedureNumber)].slice(0, 10);
+      setRecentVisitHistory(updatedHistory);
+      localStorage.setItem('recentVisitHistory', JSON.stringify(updatedHistory.map(proc => proc.procedureNumber)));
     }
 
-    navigate(`/procedure/${procedureNumber}`);
+    navigate(`/procedure/${procedureNumber}/${formattedName}`);
   };
 
   useEffect(() => {
@@ -64,7 +66,7 @@ const SearchResults = () => {
     const handleKeyDown = (e) => {
       const currentList = isHistoryMode ? recentVisitHistory.slice(-10).reverse() : searchResults;
       if (currentList.length === 0) return;
-  
+
       if (e.key === 'ArrowDown') {
         e.preventDefault();
         setHighlightedIndex((prevIndex) => 
@@ -81,9 +83,9 @@ const SearchResults = () => {
         handleSearchResultsClick(selectedItem);
       }
     };
-  
+
     window.addEventListener('keydown', handleKeyDown);
-  
+
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
