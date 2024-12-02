@@ -123,5 +123,10 @@
     "procedureNumber":"0027",
     "procedureName": "Issue/Replace Debit Card",
     "tags"  :["lost", "new", "bank", "replacement", "keep", "same", "number", "old"]
+  },
+  {
+    "procedureNumber":"0028",
+    "procedureName": "Simplii Bank Draft",
+    "tags"  :["lost", "write", "money order", "cashier", "check"]
   }
 ]
