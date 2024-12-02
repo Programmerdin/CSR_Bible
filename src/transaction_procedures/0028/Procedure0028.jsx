@@ -51,7 +51,7 @@ function Procedure0028() {
                 <p>From here on, it is the same as a regular bank draft</p>
                 <ProcedureLink 
                   procedureNumber="0001" 
-                  buttonText="Continue to Regular Bank Draft Procedure"
+                  buttonText="Regular Bank Draft Procedure"
                 />
               </div>
             </section>
