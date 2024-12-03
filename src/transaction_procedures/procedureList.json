@@ -2,22 +2,22 @@
   {
     "procedureNumber": "0001",
     "procedureName": "Bank Draft in CAD",
-    "tags"  : ["bank draft", "canadian", "instrument", "cashier's check", "money order"]
+    "tags"  : ["canadian", "instrument", "cashier's check", "money order", "cheque"]
   },
   {
     "procedureNumber": "0002",
     "procedureName": "Bank Draft in USD from USD Account",
-    "tags"  : ["bank draft", "Foreign", "instrument", "cashier's check", "currency", "usd", "usd draft"]
+    "tags"  : ["Foreign", "instrument", "cashier's check", "money order", "cheque"]
   },
   {
     "procedureNumber": "0003",
     "procedureName": "Pay Credit Card with Cash",
-    "tags"  : ["credit card", "cad", "usd", "cash", "visa", "mastercard"]
+    "tags"  : ["cash", "visa", "mastercard", "bill", "payment"]
   },
   {
     "procedureNumber": "0004",
     "procedureName": "Wire Transfer",
-    "tags"  : ["wire transfer", "foreign", "wire", "cable"]
+    "tags"  : ["foreign", "global", "cable", "currency"]
   },
   {
     "procedureNumber": "0005",
@@ -27,17 +27,17 @@
   {
     "procedureNumber":"0006",
     "procedureName": "Settlement Draft for U Bill (Closing)",
-    "tags"  :["ubill","u-bill","unregistered","bill","tax","cra","business tax","settlement", "draft", "closing", "balancing"]
+    "tags"  :["ubill","u-bill","unregistered","bill","tax","cra","business","draft", "closing"]
   },
   {
     "procedureNumber":"0007",
     "procedureName": "Mortgage Payout",
-    "tags"  :["mortgage", "payout"]
+    "tags"  :["payment"]
   },
   {
     "procedureNumber":"0008",
     "procedureName": "Deposit USD Cash to USD Account",
-    "tags"  :["usd", "cash", "american", "dollar", "account", "deposit", "foreign", "coins", "idt"]
+    "tags"  :["account", "deposit", "foreign", "coins", "idt"]
   },
   {
     "procedureNumber":"0009",
@@ -47,12 +47,12 @@
   {
     "procedureNumber":"0010",
     "procedureName": "Deposit Foreign/USD Cheque to CAD Account", 
-    "tags"  :["usd", "american", "dollar", "account", "deposit", "foreign", "coins", "buy ticket", "currency", "exchange", "buy", "cheque", "check"]
+    "tags"  :["foreign", "coins", "buy ticket", "currency", "exchange", "buy", "check"]
   },
   {
     "procedureNumber":"0011",
     "procedureName": "Deposit USD Cheque to USD Account", 
-    "tags"  :["usd", "american", "dollar", "account", "deposit", "foreign", "coins", "buy ticket", "currency", "exchange", "buy", "cheque", "check"]
+    "tags"  :["foreign", "coins", "buy ticket", "currency", "exchange", "buy", "check"]
   },
   {
     "procedureNumber":"0012",
@@ -62,7 +62,7 @@
   {
     "procedureNumber":"0013",
     "procedureName": "Pay USD Visa", 
-    "tags"  :["USD", "Visa", "Cheque", "Payment", "credit card", "bill", "usdvisa", "instrument"] 
+    "tags"  :["Cheque", "Payment", "credit card", "bill", "instrument"] 
   },
   {
     "procedureNumber":"0014",
@@ -92,22 +92,22 @@
   {
     "procedureNumber":"0020",
     "procedureName": "Withdraw USD Cash from USD Account",  
-    "tags"  :["USD", "cash", "account", "withdrawal", "foreign", "currency", "withdraw", "American", "dollar"]
+    "tags"  :["account", "foreign", "currency"]
   },
   {
     "procedureNumber":"0021",
     "procedureName": "Order Cheques for Personal Chequing Accounts",  
-    "tags"  :["cheque", "chequing", "cheques", "checks", "check", "account", "order", "book", "personal"]
+    "tags"  :["checks", "check", "order", "book"]
   },
   {
     "procedureNumber":"0022",
     "procedureName": "How to Close (CSR)",  
-    "tags"  :["closing", "close", "end", "session", "how to close"]
+    "tags"  :["closing", "end", "session"]
   },
   {
     "procedureNumber":"0024",
     "procedureName": "Print Void Cheque (aka Customer Account Information)",  
-    "tags"  :["void", "cheque", "account","preauth", "preauthorized", "debit", "pay cheque", "pay check"]
+    "tags"  :["account","preauth", "preauthorized", "debit", "paycheque", "paycheck"]
   },
   {
     "procedureNumber":"0025",
