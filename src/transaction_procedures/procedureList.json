@@ -21,7 +21,7 @@
   },
   {
     "procedureNumber": "0005",
-    "procedureName": "Outgoing C/List for USD cheques (Closing)",
+    "procedureName": "Outgoing C-List for USD/Foreign Cheques (Closing)",
     "tags"  : ["check", "cheque", "usd", "instruments", "clist", "c-list", "closing"] 
   },
   {

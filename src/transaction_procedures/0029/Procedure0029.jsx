@@ -39,6 +39,7 @@ function Procedure0028() {
                     <p className="text-lg text-indigo-700 mb-2">ATM and Point of Sale can be changed to "N" if client doesn't want the card to be used at ATMs at or store purchases</p>
                 </div>
             </section>
+            {/* the comment below is the procedure for form 8843 if needed */}
             {/* <Separator className="bg-indigo-200" />
 
             <section>
