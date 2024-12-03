@@ -120,7 +120,7 @@ function Procedure0027() {
                     {selectedOption === 'damaged' && (
                       <div>
                         <h2 className="text-2xl font-semibold text-indigo-800">Issue New Card</h2>
-                        {/* Add specific instructions for damaged card replacement */}
+                        <p className='text-lg text-indigo-700'>Coming Soon..</p>
                       </div>
                     )}
                   </div>
