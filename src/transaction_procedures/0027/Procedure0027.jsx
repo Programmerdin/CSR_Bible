@@ -14,6 +14,7 @@ import i2replace from './Replace/0027-2.png'
 import i3replace from './Replace/0027-3.png'
 import i4replace from './Replace/0027-4.png'
 import i5replace from './Replace/0027-5.png'
+import i6replace from './Replace/0027-6.png'
 
 function Procedure0027() {
   const [selectedOption, setSelectedOption] = useState('new');
@@ -75,7 +76,7 @@ function Procedure0027() {
                   ))}
                 </div>
                 <p className="text-lg text-indigo-700">I recommend using the "Order Replacement Card" option and only using the "Issue/Replace Card" option if the client needs a debit card now</p>
-                <Separator className="my-4" />
+                <Separator className="my-6 bg-indigo-200" />
               </div>
 
               {selectedOption && (
@@ -83,8 +84,8 @@ function Procedure0027() {
                   <div className="prose prose-indigo">
                     {selectedOption === 'new' && (
                       <div className='space-y-4'>
-                        <h2 className="text-2xl font-semibold text-indigo-800">Order Replacement Card Process</h2>
-                          <div className="text-lg text-indigo-700">
+                        <h2 className="text-2xl font-semibold text-indigo-800">Order Replacement Debit Card</h2>
+                          <div className="text-lg text-indigo-700 mb-2">
                             <img src={i1} className="rounded-lg object-cover w-full shadow-lg mb-6" />
                             <img src={i2} className="rounded-lg object-cover w-full shadow-lg mb-6" />
                             <img src={i3} className="rounded-lg object-cover w-full shadow-lg mb-6" />
@@ -94,13 +95,31 @@ function Procedure0027() {
                     )}
                     {selectedOption === 'lost' && (
                       <div>
-                        <h2 className="text-2xl font-semibold text-indigo-800">Issue/Replace Card Process</h2>
-                        {/* Add specific instructions for lost/stolen card replacement */}
+                        <h2 className="text-2xl font-semibold text-indigo-800 mb-2">Issue/Replace Card</h2>
+                        <div className='space-y-4'>
+                          <p className="text-lg text-indigo-700">Sign out and grab a debit card from your branch's debit card pile</p>
+                          <p className='text-lg text-indigo-700'>If the client doesn't have a debit card (typically because they lost it), find the client's current debit card number from ECIF</p>
+                          <p className="text-lg text-indigo-700">If the client has their debit with them, scroll down to the COINS 21 - 4 section</p>
+                          <h3 className="text-xl font-semibold text-indigo-800">ECIF</h3>
+                          <img src={i1replace} className="rounded-lg object-cover w-full shadow-lg mb-6" />
+                          <img src={i6replace} className='rounded-lg object-cover w-full shadow-lg mb-6' />
+                        </div>
+                        <Separator className="my-6 bg-indigo-200" />
+                        <div className='space-y-4'>
+                          <h3 className="text-xl font-semibold text-indigo-800">COINS 21 - 4</h3>
+                          <p className="text-lg text-indigo-700">if the client has their debit with them, just type in their debit card number. If client doesn't have their debit card with them paste in (Ctrl+v) their debit card number we got from client's ECIF</p>
+                          <img src={i2replace} className="rounded-lg object-cover w-full shadow-lg mb-6" />
+                          <p className="text-lg text-indigo-700">This will bring up an ECIF window. Confirm it is the right client profile</p>
+                          <img src={i3replace} className="rounded-lg object-cover w-full shadow-lg mb-6" />
+                          <img src={i4replace} className="rounded-lg object-cover w-full shadow-lg mb-6" />
+                          <p className="text-lg text-indigo-700">Select the reason for replacement, if you're not sure just go with "L"</p>
+                          <img src={i5replace} className="rounded-lg object-cover w-full shadow-lg mb-6" />
+                        </div>
                       </div>
                     )}
                     {selectedOption === 'damaged' && (
                       <div>
-                        <h2 className="text-2xl font-semibold text-indigo-800">Issue New Card Process</h2>
+                        <h2 className="text-2xl font-semibold text-indigo-800">Issue New Card</h2>
                         {/* Add specific instructions for damaged card replacement */}
                       </div>
                     )}
