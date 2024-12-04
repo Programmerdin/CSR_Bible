@@ -133,5 +133,10 @@
     "procedureNumber":"0029",
     "procedureName": "Change Debit Card ATM/POS Limit", 
     "tags"  :["atm", "pos", "limit", "access"]
+  },
+  {
+    "procedureNumber":"0030",
+    "procedureName": "Parcel (Receive & Ship Cash)",  
+    "tags"  :["in", "out", "deliver", "lock", "cad", "usd", "bag"]
   }
 ]
