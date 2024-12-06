@@ -71,6 +71,8 @@ function Procedure0031() {
                     </div>
                   ))}
                 </div>
+                <p className='text-lg text-indigo-700'>Cash order takes 2 business days (If you are ordering on Wednesday, it will arrive on Friday)</p>
+                <p className='text-lg text-indigo-700'>It allows for 1 business day if you order before 10AM (at least in my experience)</p>
                 <Separator className="my-6 bg-indigo-200" />
               </div>
             </section>
@@ -94,6 +96,7 @@ function Procedure0031() {
                     <img src={i8_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i1_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i2_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                    <p className="text-lg text-indigo-700 mb-2">Delivery date is set to the earliest possible date by default. Change the date if you are placing the order for another day</p>
                     <img src={i3_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <p className="text-lg text-indigo-700 mb-2">Amount for each denomination of cash has to be in multiple of their bundle/box amount</p>
                     <img src={i7_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
@@ -125,6 +128,8 @@ function Procedure0031() {
                     <img src={i8_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i1_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i1_usd} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                    <p className="text-lg text-indigo-700 mb-2">Delivery date is set to the earliest possible date by default. Change the date if you are placing the order for another day</p>
+
                     <img src={i2_usd} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <p className="text-lg text-indigo-700 mb-2">Amount for each denomination of cash has to be in multiple of their bundle/box amount</p>
                     <img src={i6_usd} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
