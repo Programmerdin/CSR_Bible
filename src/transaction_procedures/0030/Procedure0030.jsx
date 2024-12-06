@@ -92,7 +92,7 @@ function Procedure0030() {
           <SaveProcedureButton />
         </div>
         <ScrollAreaNoBar className="h-[calc(100vh)] hideScrollbar">
-          <h1 className="text-4xl font-bold text-indigo-900 mb-8 mt-12 text-center">Parcel</h1>
+          <h1 className="text-4xl font-bold text-indigo-900 mb-8 mt-12 text-center">Parcel (Receive/Ship Cash)</h1>
 
           <div className="space-y-12">
             <section>

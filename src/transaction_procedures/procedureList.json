@@ -2,12 +2,12 @@
   {
     "procedureNumber": "0001",
     "procedureName": "Bank Draft in CAD",
-    "tags"  : ["canadian", "instrument", "cashier's check", "money order", "cheque"]
+    "tags"  : ["instrument", "cashier's check", "money order"]
   },
   {
     "procedureNumber": "0002",
     "procedureName": "Bank Draft in USD from USD Account",
-    "tags"  : ["Foreign", "instrument", "cashier's check", "money order", "cheque"]
+    "tags"  : ["Foreign", "instrument", "cashier's check", "money order"]
   },
   {
     "procedureNumber": "0003",
@@ -136,7 +136,12 @@
   },
   {
     "procedureNumber":"0030",
-    "procedureName": "Parcel (Receive & Ship Cash)",  
+    "procedureName": "Parcel (Receive/Ship Cash)",
     "tags"  :["in", "out", "deliver", "lock", "cad", "usd", "bag"]
+  },
+  {
+    "procedureNumber":"0031",
+    "procedureName": "Order Cash for Branch", 
+    "tags"  :["USD", "CAD", "parcel", "branch"]
   }
 ]
