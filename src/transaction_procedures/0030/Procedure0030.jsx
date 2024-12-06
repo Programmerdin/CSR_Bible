@@ -40,6 +40,7 @@ import i16_CADparcelOut from './CADparcelout/CADparcelout-16.png'
 import i17_CADparcelOut from './CADparcelout/CADparcelout-17.png'
 import i18_CADparcelOut from './CADparcelout/CADparcelout-18.png'
 import i19_CADparcelOut from './CADparcelout/CADparcelout-19.png'
+import i20_CADparcelOut from './CADparcelout/CADparcelout-20.png'
 
 import i1_USDparcelOut from './USDparcelout/USDparcelout-1.png'
 import i2_USDparcelOut from './USDparcelout/USDparcelout-2.png'
@@ -152,8 +153,17 @@ function Procedure0030() {
                   <Separator className="my-10 bg-indigo-200" />
 
                   <h3 className="text-2xl font-semibold text-indigo-800 mb-4">Money Manager</h3>
-                  <p className="text-lg text-indigo-700">Copy and paste the link in your Chrome browser to open Money Manager https://cibc.mmnap.cs.garda.com/WebPortal/login_page.action</p>
+                  <div className="mb-4">
+                    <Button
+                      variant="default"
+                      className="bg-indigo-600 text-white hover:bg-indigo-700"
+                      onClick={() => window.open('https://cibc.mmnap.cs.garda.com/WebPortal/login_page.action', '_blank', 'noopener,noreferrer')}
+                    >
+                      Click to Open Money Manager
+                    </Button>
+                  </div>
                   <p className="text-lg text-indigo-700 mb-2">Log into Money Manager</p>
+                  <img src={i20_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                   <img src={i1_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                   <p className="text-lg text-indigo-700">Bag No. can be found on top of the parcel bag</p>
                   <img src={i3_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
@@ -235,8 +245,17 @@ function Procedure0030() {
                     <Separator className="my-10 bg-indigo-200" />
 
                     <h3 className="text-2xl font-semibold text-indigo-800 mb-4">Money Manager</h3>
-                    <p className="text-lg text-indigo-700">Copy and paste the link in your Chrome browser to open Money Manager https://cibc.mmnap.cs.garda.com/WebPortal/login_page.action</p>
+                    <div className="mb-4">
+                      <Button
+                        variant="default"
+                        className="bg-indigo-600 text-white hover:bg-indigo-700"
+                        onClick={() => window.open('https://cibc.mmnap.cs.garda.com/WebPortal/login_page.action', '_blank', 'noopener,noreferrer')}
+                      >
+                        Click to Open Money Manager
+                      </Button>
+                    </div>
                     <p className="text-lg text-indigo-700 mb-2">Log into Money Manager</p>
+                    <img src={i20_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                     <img src={i1_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                     <p className="text-lg text-indigo-700">Bag No. can be found on top of the parcel bag</p>
                     <img src={i3_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />

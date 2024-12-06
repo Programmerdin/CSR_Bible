@@ -12,6 +12,7 @@ import i4_cad from './CADcashorder/CADcashorder-4.png'
 import i5_cad from './CADcashorder/CADcashorder-5.png'
 import i6_cad from './CADcashorder/CADcashorder-6.png'
 import i7_cad from './CADcashorder/CADcashorder-7.png'
+import i8_cad from './CADcashorder/CADcashorder-8.png'
 
 import i1_usd from './USDcashorder/USDcashorder-1.png'
 import i2_usd from './USDcashorder/USDcashorder-2.png'
@@ -19,6 +20,7 @@ import i3_usd from './USDcashorder/USDcashorder-3.png'
 import i4_usd from './USDcashorder/USDcashorder-4.png'
 import i5_usd from './USDcashorder/USDcashorder-5.png'
 import i6_usd from './USDcashorder/USDcashorder-6.png'
+
 
 
 function Procedure0031() {
@@ -79,8 +81,17 @@ function Procedure0031() {
                   <h2 className="text-3xl font-semibold text-indigo-800 mb-4">Order CAD Cash</h2>
                   <div className="text-lg text-indigo-700">
                     <h3 className="text-2xl font-semibold text-indigo-800 mb-4">Money Manager</h3>
-                    <p className="text-lg text-indigo-700">Copy and paste the link in your Chrome browser to open Money Manager https://cibc.mmnap.cs.garda.com/WebPortal/login_page.action</p>
-                    <p className="text-lg text-indigo-700 mb-2">Log into Money Manager</p>
+                    <div className="mb-4">
+                      <Button
+                        variant="default"
+                        className="bg-indigo-600 text-white hover:bg-indigo-700"
+                        onClick={() => window.open('https://cibc.mmnap.cs.garda.com/WebPortal/login_page.action', '_blank', 'noopener,noreferrer')}
+                      >
+                        Click to Open Money Manager
+                      </Button>
+                    </div>
+                    <p className="text-lg text-indigo-700">Log into Money Manager</p>
+                    <img src={i8_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i1_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i2_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i3_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
@@ -101,8 +112,17 @@ function Procedure0031() {
                 <h2 className="text-3xl font-semibold text-indigo-800 mb-4">Order USD Cash</h2>
                 <div className="text-lg text-indigo-700">
                     <h3 className="text-2xl font-semibold text-indigo-800 mb-4">Money Manager</h3>
-                    <p className="text-lg text-indigo-700">Copy and paste the link in your Chrome browser to open Money Manager https://cibc.mmnap.cs.garda.com/WebPortal/login_page.action</p>
-                    <p className="text-lg text-indigo-700 mb-2">Log into Money Manager</p>
+                    <div className="mb-4">
+                      <Button
+                        variant="default"
+                        className="bg-indigo-600 text-white hover:bg-indigo-700"
+                        onClick={() => window.open('https://cibc.mmnap.cs.garda.com/WebPortal/login_page.action', '_blank', 'noopener,noreferrer')}
+                      >
+                        Click to Open Money Manager
+                      </Button>
+                    </div>
+                    <p className="text-lg text-indigo-700">Log into Money Manager</p>
+                    <img src={i8_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i1_cad} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i1_usd} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                     <img src={i2_usd} alt="Initial Setup" className="rounded-lg object-cover w-full shadow-lg mb-4" />
