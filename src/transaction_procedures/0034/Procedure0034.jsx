@@ -6,25 +6,21 @@ import BackButton from '../../components/BackButton';
 import SaveProcedureButton from '../../components/SaveProcedureButton';
 import ProcedureLink from '../../components/ProcedureLink';
 
-import i1 from './0032-1.png'
-import i2 from './0032-2.png'
-import i3 from './0032-3.png'
-import i4 from './0032-4.png'
-import i5 from './0032-5.png'
-import i6 from './0032-6.png'
-import i7 from './0032-7.png'
-import i8 from './0032-8.png'
-import i9 from './0032-9.png'
-import i10 from './0032-10.png'
-import i11 from './0032-11.png'
-import i12 from './0032-12.png'
-import i13 from './0032-13.png'
-import i14 from './0032-14.png'
+import i1 from './0034-1.png'
+import i2 from './0034-2.png'
+import i3 from './0034-3.png'
+import i4 from './0034-4.png'
+import i5 from './0034-5.png'
+import i6 from './0034-6.png'
+import i7 from './0034-7.png'
+import i8 from './0034-8.png'
+import i9 from './0034-9.png'
+import i10 from './0034-10.png'
+import i11 from './0034-11.png'
+import i12 from './0034-12.png'
+import i13 from './0034-13.png'
 
-
-
-function Procedure0032() {
-
+function Procedure0034() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-50 to-indigo-100 px-4 relative">
@@ -36,7 +32,7 @@ function Procedure0032() {
           <SaveProcedureButton />
         </div>
         <ScrollAreaNoBar className="h-[calc(100vh)] hideScrollbar">
-          <h1 className="text-4xl font-bold text-indigo-900 mb-8 mt-12 text-center">Get Closed Account Statement</h1>
+          <h1 className="text-4xl font-bold text-indigo-900 mb-8 mt-12 text-center">Order Class Work Bundle</h1>
 
           <div className="space-y-12">
             <section>
@@ -55,14 +51,13 @@ function Procedure0032() {
                 <img src={i4} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                 <img src={i5} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                 <img src={i6} className="rounded-lg object-cover w-full shadow-lg mb-8" />
-                {/* <img src={i7} className="rounded-lg object-cover w-full shadow-lg mb-8" /> */}
+                <img src={i7} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                 <img src={i8} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                 <img src={i9} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                 <img src={i10} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                 <img src={i11} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                 <img src={i12} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                 <img src={i13} className="rounded-lg object-cover w-full shadow-lg mb-8" />
-                <img src={i14} className="rounded-lg object-cover w-full shadow-lg mb-8" />
               </div>
             </section>
 
@@ -74,4 +69,4 @@ function Procedure0032() {
   );
 }
 
-export default Procedure0032;
+export default Procedure0034;

@@ -146,12 +146,17 @@
   },
   {
     "procedureNumber":"0032",
-    "procedureName": "Get Closed Account Statement", 
+    "procedureName": "Get Closed Account Statement (3270)", 
     "tags"  :["history", "old", "3270"]
   },
   {
     "procedureNumber":"0033",
     "procedureName": "Set up 3270", 
     "tags"  :["first time", "new", "setting", "3270"]
+  },
+  {
+    "procedureNumber":"0034",
+    "procedureName": "Order Class Work Bundle (3270)", 
+    "tags"  :["filing", "receipt", "past", "3270", "retrieve"]
   }
 ]
