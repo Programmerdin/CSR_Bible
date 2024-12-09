@@ -158,5 +158,10 @@
     "procedureNumber":"0034",
     "procedureName": "Order Class Work Bundle (3270)", 
     "tags"  :["filing", "receipt", "past", "3270", "retrieve"]
+  },
+  {
+    "procedureNumber":"0035",
+    "procedureName": "Order Foreign Currency for Client", 
+    "tags"  :["cash", "exchange"]
   }
 ]
