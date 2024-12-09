@@ -137,11 +137,21 @@
   {
     "procedureNumber":"0030",
     "procedureName": "Parcel (Receive/Ship Cash)",
-    "tags"  :["in", "out", "deliver", "lock", "cad", "usd", "bag"]
+    "tags"  :["in", "out", "deliver", "lock", "cad", "usd", "bag", "parcel"]
   },
   {
     "procedureNumber":"0031",
     "procedureName": "Order Cash for Branch", 
     "tags"  :["USD", "CAD", "parcel", "branch"]
+  },
+  {
+    "procedureNumber":"0032",
+    "procedureName": "Get Closed Account Statement", 
+    "tags"  :["history", "old", "3270"]
+  },
+  {
+    "procedureNumber":"0033",
+    "procedureName": "Set up 3270", 
+    "tags"  :["first time", "new", "setting", "3270"]
   }
 ]

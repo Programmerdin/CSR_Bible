@@ -101,6 +101,7 @@ function Procedure0025() {
                     <div className="text-lg text-indigo-700">
                       <img src={i6} alt="Payment processing" className="rounded-lg object-cover w-full shadow-lg mb-4" />
                       <img src={i7} alt="Processing continued" className="rounded-lg object-cover w-full shadow-lg mb-4" />
+                      <p className="text-2xl text-indigo-700 mb-2">For loans that are in arrears, you cannot change the payment amount. If the client wants to pay more than the amount in arrears, you must first process the displayed amount first and then process the difference as a separate payment.</p>
                       <img src={i8} alt="Verification step" className="rounded-lg object-cover w-full shadow-lg mb-4" />
 
                     </div>

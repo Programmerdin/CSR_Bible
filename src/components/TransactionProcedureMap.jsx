@@ -27,6 +27,8 @@ import Procedure0028 from "../transaction_procedures/0028/Procedure0028";
 import Procedure0029 from "../transaction_procedures/0029/Procedure0029";
 import Procedure0030 from "../transaction_procedures/0030/Procedure0030";
 import Procedure0031 from "../transaction_procedures/0031/Procedure0031";
+import Procedure0032 from "../transaction_procedures/0032/Procedure0032";
+import Procedure0033 from "../transaction_procedures/0033/Procedure0033";
 
 const TransactionProcedureMap = {
   1: Procedure0001,
@@ -58,6 +60,8 @@ const TransactionProcedureMap = {
   29: Procedure0029,
   30: Procedure0030,
   31: Procedure0031,
+  32: Procedure0032,
+  33: Procedure0033
 };
 
 export default TransactionProcedureMap;

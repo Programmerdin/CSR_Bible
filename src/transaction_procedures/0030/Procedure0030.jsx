@@ -167,7 +167,8 @@ function Procedure0030() {
                   <img src={i1_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                   <p className="text-lg text-indigo-700">Bag No. can be found on top of the parcel bag</p>
                   <img src={i3_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
-                  <img src={i4_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
+                  <img src={i4_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg" />
+                  <p className="text-lg text-indigo-700 mb-8">Unfit section is for mutilated bills</p>
                   <p className="text-lg text-indigo-700">Amount for each denomination of cash has to be in multiple of their bundle/box amount</p>
                   <img src={i5_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                   <img src={i6_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
@@ -260,6 +261,7 @@ function Procedure0030() {
                     <p className="text-lg text-indigo-700">Bag No. can be found on top of the parcel bag</p>
                     <img src={i3_CADparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                     <img src={i1_USDparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
+                    <p className="text-lg text-indigo-700 mb-8">Unfit section is for mutilated bills</p>
                     <p className="text-lg text-indigo-700">Amount for each denomination of cash has to be in multiple of their bundle/box amount</p>
                     <img src={i5_USDparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                     <img src={i2_USDparcelOut} className="rounded-lg object-cover w-full shadow-lg mb-8" />
