@@ -20,6 +20,7 @@ import i5_USDparcelIn from './USDparcelin/parcel-in-usd-5.png'
 import i6_USDparcelIn from './USDparcelin/parcel-in-usd-6.png'
 import i7_USDparcelIn from './USDparcelin/parcel-in-usd-7.png'
 import i8_USDparcelIn from './USDparcelin/parcel-in-usd-8.png'
+import i9_USDparcelIn from './USDparcelin/parcel-in-usd-9.png'
 
 import i1_CADparcelOut from './CADparcelout/CADparcelout-1.png'
 import i2_CADparcelOut from './CADparcelout/CADparcelout-2.png'
@@ -229,6 +230,8 @@ function Procedure0030() {
                     <p className="text-lg text-indigo-700">Other transit: Other transit will depend on the location of your branch. Ask your supervisor if you're not sure.</p>
                     <p className="text-lg text-indigo-700">Other date: date written on the parcel packaging</p>
                     <img src={i8_USDparcelIn} className="rounded-lg object-cover w-full shadow-lg mb-8" />
+                    <img src={i9_USDparcelIn} className="rounded-lg object-cover w-full shadow-lg mb-8" />
+                    <p className="text-lg text-indigo-700">Amount: type in CAD equivalent amount written on the parcel packaging</p>
                     <img src={i5_USDparcelIn} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                     <img src={i6_USDparcelIn} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                   </div>
