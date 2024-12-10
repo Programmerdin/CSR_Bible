@@ -4,7 +4,6 @@ import TransactionProcedureMap from '../components/TransactionProcedureMap';
 import { useAtom } from 'jotai';
 import { currentProcedureAtom } from '../atoms/procedureAtom';
 import procedureList from '../transaction_procedures/procedureList.json';
-
 const ProcedureView = () => {
   const { procedureId, procedureName } = useParams();
   const [currentProcedure, setCurrentProcedure] = useAtom(currentProcedureAtom);

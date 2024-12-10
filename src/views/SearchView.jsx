@@ -122,7 +122,7 @@ const SearchView = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-indigo-100 p-4 sm:p-6 md:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-indigo-100 p-4 sm:p-6 md:p-8 relative">
       <div className="max-w-3xl mx-auto">
         <img src={logo} alt="CSR Bible Logo" className="h-12 mx-auto mb-10 mt-2" />
         
@@ -235,6 +235,15 @@ const SearchView = () => {
           </Tabs>
         )}
       </div>
+      <footer className="fixed bottom-0 left-0 right-0 text-center text-gray-400">
+        <div className="max-w-3xl mx-auto px-4 py-3 text-m">
+          <div className="flex justify-center space-x-6">
+            <a href="/all-procedures" className="text-gray-400 hover:text-gray-600">List of All Procedures</a>
+            <a href="/about" className="text-gray-400 hover:text-gray-600">About</a>
+          </div>
+
+        </div>
+      </footer>
     </div>
   );
 };

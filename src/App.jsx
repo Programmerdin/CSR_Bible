@@ -5,6 +5,8 @@ import SearchView from './views/SearchView';
 import './App.css';
 import { useAtom } from 'jotai';
 import { currentProcedureAtom, savedProceduresAtom } from './atoms/procedureAtom';
+import ListOfAllProcedures from './views/FooterContent/ListOfAllProcedures';
+import About from './views/FooterContent/About';
 
 function App() {
   const [savedProcedures, setSavedProcedures] = useAtom(savedProceduresAtom);
@@ -23,6 +25,8 @@ function App() {
         <Route path="/" element={<SearchView />} />
         <Route path="/procedure/:procedureId/:procedureName" element={<ProcedureView />} />
         <Route path="/procedure/:procedureId" element={<ProcedureView />} />
+        <Route path="/all-procedures" element={<ListOfAllProcedures />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
