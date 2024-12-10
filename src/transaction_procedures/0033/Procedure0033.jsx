@@ -7,8 +7,8 @@ import SaveProcedureButton from '../../components/SaveProcedureButton';
 
 import i0 from './0033-0.png'
 import i1 from './0033-1.png'
-
-
+import i2 from './0033-2.png'
+import i3 from './0033-3.png'
 
 function Procedure0033() {
 
@@ -27,9 +27,11 @@ function Procedure0033() {
           <div className="space-y-12">
             <section>
               <div>
-                <p className="text-lg text-indigo-800 mb-4">procedure is incomplete at this time</p>
+                <p className="text-lg text-indigo-800 mb-4">procedure is incomplete at this time but you should still be able to follow along little bit.</p>
                 <h2 className="text-2xl font-semibold text-indigo-800 mb-4">Start 3270</h2>
                 <img src={i1} className="rounded-lg object-cover w-full shadow-lg mb-8" />
+                <img src={i2} className="rounded-lg object-cover w-full shadow-lg mb-8" />
+                <img src={i3} className="rounded-lg object-cover w-full shadow-lg mb-8" />
                 <img src={i0} className="rounded-lg object-cover w-full shadow-lg mb-8" />
               </div>
             </section>

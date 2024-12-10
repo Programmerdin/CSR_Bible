@@ -163,5 +163,10 @@
     "procedureNumber":"0035",
     "procedureName": "Order Foreign Currency for Client", 
     "tags"  :["cash", "exchange"]
+  },
+  {
+    "procedureNumber":"0036",
+    "procedureName": "Wire Information Form", 
+    "tags"  :["Wire", "receiving", "print"]
   }
 ]
