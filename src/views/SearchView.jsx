@@ -30,6 +30,7 @@ const SearchView = () => {
   const [savedProcedures] = useAtom(savedProceduresAtom);
   const [savedProceduresWithDetails, setSavedProceduresWithDetails] = useState([]);
   const [highlightedIndex, setHighlightedIndex] = useState(-1);
+  const [randomPlaceholder, setRandomPlaceholder] = useState('');
 
   const fuse = new Fuse(procedureList, {
     keys: ['procedureNumber', 'procedureName', 'tags'],
@@ -52,8 +53,22 @@ const SearchView = () => {
         .filter(proc => proc !== null);
 
       setRecentVisitHistory(filteredHistory);
+    } else {
+      // Default procedures when history is empty
+      const defaultProcedures = ['0007','0006', '0019', '0013', '0010', '0002', '0001', '0008', '0003', '0004'];
+      const defaultHistory = defaultProcedures
+        .map(procNum => procedureList.find(proc => proc.procedureNumber.padStart(4, '0') === procNum))
+        .filter(proc => proc !== null);
+      
+      setRecentVisitHistory(defaultHistory);
+      localStorage.setItem('recentVisitHistory', JSON.stringify(defaultProcedures));
     }
   }, [setRecentVisitHistory]);
+
+  useEffect(() => {
+    const randomProcedure = procedureList[Math.floor(Math.random() * procedureList.length)];
+    setRandomPlaceholder(randomProcedure.procedureName);
+  }, []);
 
   useEffect(() => {
     if (query.length > 0) {
@@ -77,9 +92,24 @@ const SearchView = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (searchResults.length === 0) return;
+    if (searchResults.length === 0) {
+      if (e.key === 'Enter' && query === '') {
+        // When Enter is pressed with empty search, go to the placeholder procedure
+        const placeholderProcedure = procedureList.find(proc => proc.procedureName === randomPlaceholder);
+        if (placeholderProcedure) {
+          handleProcedureClick(placeholderProcedure);
+        }
+        return;
+      } else if (e.key === 'Tab' && query === '') {
+        // When Tab is pressed with empty search, fill in the placeholder text
+        e.preventDefault();
+        setQuery(randomPlaceholder);
+        return;
+      }
+      return;
+    }
 
-    if (e.key === 'ArrowDown') {
+    if (e.key === 'ArrowDown' || (e.key === 'Tab' && query !== '')) {
       e.preventDefault();
       setHighlightedIndex((prevIndex) => 
         (prevIndex + 1) % searchResults.length
@@ -135,7 +165,7 @@ const SearchView = () => {
             </div>
             <Input
               type="search"
-              placeholder="Search procedures..."
+              placeholder={randomPlaceholder || "Search procedures..."}
               className="block w-full pl-12 pr-12 py-6 border-none text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 text-xl"
               value={query}
               onChange={handleSearchChange}
