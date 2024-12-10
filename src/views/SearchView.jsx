@@ -55,7 +55,7 @@ const SearchView = () => {
       setRecentVisitHistory(filteredHistory);
     } else {
       // Default procedures when history is empty
-      const defaultProcedures = ['0007','0006', '0019', '0013', '0010', '0002', '0001', '0008', '0003', '0004'];
+      const defaultProcedures = ['0007','0006', '0019', '0013', '0010', '0002', '0001', '0008', '0003', '0004', '0036'];
       const defaultHistory = defaultProcedures
         .map(procNum => procedureList.find(proc => proc.procedureNumber.padStart(4, '0') === procNum))
         .filter(proc => proc !== null);

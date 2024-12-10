@@ -168,5 +168,10 @@
     "procedureNumber":"0036",
     "procedureName": "Wire Information Form", 
     "tags"  :["Wire", "receiving", "print"]
+  }, 
+  {
+    "procedureNumber":"0037",
+    "procedureName": "Search a CIBC Branch",
+    "tags"  :["search", "transit", "address", "phone number"]
   }
 ]
